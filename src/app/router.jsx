@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Inicio from "../app/pages/Inicio/index.jsx"
+import Inicio from "./pages/Inicio/inicio.jsx"
 
 function AppRouter() {
     return (
