@@ -1,0 +1,34 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.header__links {
+    display: flex;
+    gap: 65px;
+    list-style: none;
+}
+
+.header__links li a {
+    text-decoration: none;
+    font-family: var(--fonte-lemon-milk);
+    color: var(--cor-verde-claro);
+    font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .header__links {
+        display: none;
+    }
+
+    .header__logo {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    
+}
