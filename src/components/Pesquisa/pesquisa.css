@@ -1,5 +1,4 @@
 .pesquisa {
-    justify-self: center;
     position: relative;
     width: 30vw;
 }
@@ -29,12 +28,18 @@
 
 @media (max-width: 1024px) {
     .pesquisa {
-        width: 50vw;
+        width: 60vw;
+        padding-top: 50px;
+    }
+
+    .pesquisa__icone {
+        top: 65%;
     }
 }
 
 @media (max-width: 768px) {
     .pesquisa {
-        width: 50vw;
+        width: 60vw;
+        margin-left: 30px;
     }
 }
