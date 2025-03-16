@@ -1,6 +1,6 @@
 import React from 'react'
 import { GoSearch } from "react-icons/go";
-import './pesquisa.css'
+import './Pesquisa.css'
 
 function Pesquisa() {
   return (

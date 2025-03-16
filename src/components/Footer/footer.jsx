@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../../assets/logo.png'
 import LinkedIn from '../../assets/linkedin.png'
 import GitHub from '../../assets/github.png'
-import './footer.css'
+import './Footer.css'
 
 function Footer() {
   return (
