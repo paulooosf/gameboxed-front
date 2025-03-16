@@ -22,17 +22,3 @@ header {
 .header__links li a:hover {
     color: #EEFFD9;
 }
-
-@media (max-width: 1024px) {
-    .header__links {
-        display: none;
-    }
-
-    .header__logo {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    
-}
