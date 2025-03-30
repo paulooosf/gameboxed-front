@@ -1,0 +1,40 @@
+.avaliacao__container {
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+    background-color: #262D38;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.tipografia__titulo {
+    font-family: var(--fonte-segoe-ui);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.tipografia__descricao {
+    font-family: var(--fonte-poppins);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.nota {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.nota__tipografia {
+    font-family: var(--fonte-kdam);
+    font-size: 3rem;
+}
+
+.nota__estrela {
+    color: var(--cor-verde);
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+}
