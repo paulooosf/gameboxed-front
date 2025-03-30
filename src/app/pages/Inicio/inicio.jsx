@@ -4,8 +4,11 @@ import Footer from '../../../components/Footer/Footer'
 import Background from '../../../assets/background-inicio.png'
 import Card from '../../../components/Card/Card'
 import './Inicio.css'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Inicio() {
+  const navigate = useNavigate()
+
   return (
     <body className="inicio">
       <img src={Background} alt="Imagem de fundo do site, uma arte do jogo Valorant" className="inicio__background"/>
@@ -19,11 +22,13 @@ function Inicio() {
       <section className="inicio__em__alta">
         <p className="inicio__em__alta__tipografia">Em alta:</p>
         <div className="inicio__cards">
-          <Card
-            capa="https://image.api.playstation.com/vulcan/ap/rnd/202411/2217/15e82cd2b2f42ee8bcb56a37703da3cc722d42805e8eeddd.png"
-            titulo="The Crew: Motorfest"
-            nota="4.75"
-          />
+          <Link to="/jogo">
+            <Card
+              capa="https://image.api.playstation.com/vulcan/ap/rnd/202411/2217/15e82cd2b2f42ee8bcb56a37703da3cc722d42805e8eeddd.png"
+              titulo="The Crew: Motorfest"
+              nota="4.75"
+            />
+          </Link>
           <Card
             capa="https://i.namu.wiki/i/kZCETtwGMm6LKT_5HX8dAe2mYb_0KDqMRa6WBGHBBLHMGbxcVvu4yLVrNgBYCobQhhXR4XfvVagDJISQ4SpV7A.webp"
             titulo="Marvel Rivals"
