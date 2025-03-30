@@ -5,7 +5,7 @@ import './Card.css'
 
 function Card(props) {
   return (
-    <Link className="container">
+    <div className="container">
         <div className="card">
             <img src={props.capa} alt="Capa do Jogo" className="card__imagem"/>
             <div className="card__tipografias">
@@ -18,7 +18,7 @@ function Card(props) {
                 </div>
             </div>
         </div>
-    </Link>
+    </div>
   )
 }
 
