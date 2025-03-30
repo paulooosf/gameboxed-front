@@ -5,7 +5,7 @@
 
 .jogo__background {
     position: absolute;
-    top: 10rem;
+    top: 8.2rem;
     width: 100%;
     height: 100%;
     max-width: 80vw;
@@ -71,9 +71,9 @@
 
 .jogo__sobre__info__empresa {
     color: #5F5F5F;
-    font-family: var(--fonte-poppins);
+    font-family: var(--fonte-segoe-ui);
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .jogo__sobre__info__descricao {
@@ -126,4 +126,46 @@
 .jogo__sobre__avaliacoes__botao__avaliar:hover {
     cursor: pointer;
     background-color: #EEFFD9;
+}
+
+.jogo__avaliacoes {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 350px 0 350px;
+    gap: 20px;
+}
+
+.jogo__avaliacoes__tipografias {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.jogo__avaliacoes__tipografia__recentes {
+    font-family: var(--fonte-poppins);
+    font-size: 1.5rem;
+    color: white;
+}
+
+.jogo__avaliacoes__tipografia__ver__mais {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: var(--fonte-poppins);
+    font-size: 1.5rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.jogo__avaliacoes__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.jogo__trailer {
+    align-self: center;
+    margin: 10rem 0;
 }
