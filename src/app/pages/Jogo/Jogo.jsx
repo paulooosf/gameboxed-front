@@ -8,7 +8,7 @@ import { FaStar } from 'react-icons/fa'
 function Jogo() {
   return (
     <body className="jogo">
-        <Header/>
+        <Header modo="logado"/>
         <div className="jogo__background">
             <img src="https://pbs.twimg.com/media/GGonApTWkAApY-n.jpg:large" alt="Banner do jogo" className="jogo__background__imagem"/>
         </div>

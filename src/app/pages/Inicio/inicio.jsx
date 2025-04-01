@@ -12,7 +12,7 @@ function Inicio() {
   return (
     <body className="inicio">
       <img src={Background} alt="Imagem de fundo do site, uma arte do jogo Valorant" className="inicio__background"/>
-      <Header/>
+      <Header modo="logado"/>
       <section className="inicio__intro">
         <p className="inicio__intro__tipografia">Avalie jogos.</p>
         <p className="inicio__intro__tipografia">Compartilhe sua experiência.</p>

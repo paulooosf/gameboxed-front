@@ -5,23 +5,44 @@ import './Header.css'
 import './MenuHamburguer.css'
 import { Link } from 'react-router-dom'
 
-// TODO: Alterar exibição de links caso o usuário esteja deslogado e caso seja um admin.
-
-function Header() {
+function Header({ modo }) {
   return (
-    <div className="header__container">
-      <header>
-          <img src={Logo} alt="Logotipo do GameboXed" className="header__logo" />
-          <Pesquisa/>
+    <header className={`header__${modo}`}>
+        <img src={Logo} alt="Logotipo do GameboXed" className="header__logo" />
+        {modo === 'logado' && (
+          <>
+            <Pesquisa/>
+            <ul className="header__links">
+              <li>
+                <Link to="/">INÍCIO</Link>
+              </li>
+              <li><a href="">EM ALTA</a></li>
+              <li><a href="">SAIR</a></li>
+            </ul>
+          </>
+        )}
+
+        {modo === 'deslogado' && (
+          <>
+            <Pesquisa/>
+            <ul className="header__links">
+              <li>
+                <Link to="/">INÍCIO</Link>
+              </li>
+              <li><a href="">ENTRAR</a></li>
+              <li><a href="">CRIAR CONTA</a></li>
+            </ul>
+          </>
+        )}
+
+        {modo === 'login' && (
           <ul className="header__links">
             <li>
               <Link to="/">INÍCIO</Link>
             </li>
-            <li><a href="">EM ALTA</a></li>
-            <li><a href="">SAIR</a></li>
           </ul>
-      </header>
-    </div>
+        )}
+    </header>
   )
 }
 
