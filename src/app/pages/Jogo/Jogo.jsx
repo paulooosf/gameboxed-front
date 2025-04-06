@@ -7,7 +7,7 @@ import { FaStar } from 'react-icons/fa'
 
 function Jogo() {
   return (
-    <body className="jogo">
+    <div className="jogo">
         <Header modo="logado"/>
         <div className="jogo__background">
             <img src="https://pbs.twimg.com/media/GGonApTWkAApY-n.jpg:large" alt="Banner do jogo" className="jogo__background__imagem"/>
@@ -57,7 +57,7 @@ function Jogo() {
             <iframe width="589" height="431" src="https://www.youtube.com/embed/ugKIELPN8mI?si=7DsfPZOV9P4mH4fV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </article>
         <Footer/>
-    </body>
+    </div>
   )
 }
 
