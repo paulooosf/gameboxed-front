@@ -1,3 +1,9 @@
+.input__itens {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+}
+
 .legenda {
     font-family: var(--fonte-segoe-ui);
     font-size: 1.3rem;
@@ -6,11 +12,10 @@
 
 .input__container {
     position: relative;
-    width: 330px;
 }
 
 .input {
-    width: 330px;
+    width: 100%;
     padding: 15px;
     font-size: 1rem;
     border: 2px solid white;
@@ -29,8 +34,8 @@
 }
 
 .icone {
-    z-index: 1000; /* Eleva o botão acima de outros elementos */
-    pointer-events: auto; /* Garante que ele aceita cliques */
+    z-index: 1000;
+    pointer-events: auto;
     position: absolute;
     right: 20px;
     top: 30%;
@@ -39,7 +44,8 @@
 
 .erro {
     font-family: var(--fonte-segoe-ui);
-    font-size: 0.9rem;
-    font-weight: 200;
+    font-size: 1rem;
+    font-weight: 100;
     color: #FF5656;
+    align-self: flex-end;
 }

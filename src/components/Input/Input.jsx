@@ -9,18 +9,18 @@ function Input({ modo, legenda, erro }) {
   return (
     <>
         {modo === 'texto' && (
-            <>
+            <div className="input__itens">
                 <p className="legenda">{legenda}</p>
                 <input
                     type="text"
                     className="input"
                 />
                 {erro && <p className="erro">{erro}</p>}
-            </>
+            </div>
         )}
 
         {modo === 'senha' && (
-            <>
+            <div className="input__itens">
                 <p className="legenda">{legenda}</p>
                 <div className="input__container">
                     <input
@@ -31,10 +31,11 @@ function Input({ modo, legenda, erro }) {
                     onClick={() => setMostraSenha(!mostraSenha)}
                     className="icone"
                     >
-                    {mostraSenha ? <FaEyeSlash /> : <FaEye />}
+                    {mostraSenha ? <FaEyeSlash/> : <FaEye/>}
                     </span>
                 </div>
-            </>
+                {erro && <p className="erro">{erro}</p>}h
+            </div>
         )}
     </>
   )
