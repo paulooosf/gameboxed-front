@@ -1,12 +1,14 @@
-import { Routes, Route } from "react-router-dom";
-import Inicio from "./pages/Inicio/inicio.jsx"
-import Jogo from "./pages/Jogo/Jogo.jsx";
+import { Routes, Route } from "react-router-dom"
+import Inicio from "./pages/Inicio/Inicio.jsx"
+import Jogo from "./pages/Jogo/Jogo.jsx"
+import Registro from "./pages/Registro/Registro.jsx"
 
 function AppRouter() {
     return (
         <Routes>
-            <Route path="/" element={<Inicio/>}></Route>
-            <Route path="/jogo" element={<Jogo/>}></Route>
+            <Route path="/" element={<Inicio/>}/>
+            <Route path="/jogo" element={<Jogo/>}/>
+            <Route path="/registro" element={<Registro/>}/>
         </Routes>
     )
 }

@@ -12,12 +12,12 @@ function Inicio() {
   return (
     <body className="inicio">
       <img src={Background} alt="Imagem de fundo do site, uma arte do jogo Valorant" className="inicio__background"/>
-      <Header modo="logado"/>
+      <Header modo="deslogado"/>
       <section className="inicio__intro">
         <p className="inicio__intro__tipografia">Avalie jogos.</p>
         <p className="inicio__intro__tipografia">Compartilhe sua experiência.</p>
         <p className="inicio__intro__tipografia">Descubra novas possibilidades.</p>
-        <button className="inicio__intro__botao">Registre-se!</button>
+        <button className="inicio__intro__botao" onClick="">Registre-se!</button>
       </section>
       <section className="inicio__em__alta">
         <p className="inicio__em__alta__tipografia">Em alta:</p>

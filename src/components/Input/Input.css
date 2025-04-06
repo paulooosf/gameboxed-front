@@ -1,0 +1,45 @@
+.legenda {
+    font-family: var(--fonte-segoe-ui);
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.input__container {
+    position: relative;
+    width: 330px;
+}
+
+.input {
+    width: 330px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid white;
+    border-radius: 15px;
+    outline: none;
+    background: none;
+    color: white;
+}
+
+.input:focus {
+    border-color: var(--cor-verde-claro);
+}
+
+.input:value {
+    color: white;
+}
+
+.icone {
+    z-index: 1000; /* Eleva o botão acima de outros elementos */
+    pointer-events: auto; /* Garante que ele aceita cliques */
+    position: absolute;
+    right: 20px;
+    top: 30%;
+    cursor: pointer;
+}
+
+.erro {
+    font-family: var(--fonte-segoe-ui);
+    font-size: 0.9rem;
+    font-weight: 200;
+    color: #FF5656;
+}
