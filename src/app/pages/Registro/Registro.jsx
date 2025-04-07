@@ -6,17 +6,30 @@ import Input from '../../../components/Input/Input'
 
 function Registro() {
   return (
-    <div className="registro">
+    <>
         <Header modo="login"/>
-        <img src={Background} alt="" className="registro__background"/>
-        <h1 className="registro__titulo">Crie sua conta.</h1>
-        <h3 className="registro__subtitulo">É grátis!</h3>
-        <Input
-          modo="senha"
-          legenda="Usuário"
-          erro="Erro!"
-        />
-    </div>
+        <div className="registro__container">
+          <img src={Background} alt="" className="registro__background"/>
+          <div className="registro__intro">
+            <h1 className="registro__titulo">Crie sua conta.</h1>
+            <h3 className="registro__subtitulo">É grátis!</h3>
+          </div>
+          <Input
+            modo="texto"
+            legenda="Usuário"
+          />
+          <Input
+            modo="texto"
+            legenda="E-mail"
+          />
+          <Input
+            modo="senha"
+            legenda="Senha"
+          />
+          <button className="registro__botao">Criar conta</button>
+          <p className="registro__tipografia">Já possui uma conta? <a href="" className="registro__link">Faça login!</a></p>
+        </div>
+    </>
   )
 }
 

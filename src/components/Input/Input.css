@@ -23,14 +23,12 @@
     outline: none;
     background: none;
     color: white;
+    font-family: var(--fonte-segoe-ui);
+    font-weight: 100;
 }
 
 .input:focus {
     border-color: var(--cor-verde-claro);
-}
-
-.input:value {
-    color: white;
 }
 
 .icone {
