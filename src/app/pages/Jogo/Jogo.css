@@ -118,6 +118,7 @@
     font-family: var(--fonte-poppins);
     font-size: 1.2rem;
     font-weight: bold;
+    border: none;
     border-radius: 15px;
     padding: 5px 25px 5px 25px;
     margin-top: 10px;

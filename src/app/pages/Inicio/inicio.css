@@ -33,6 +33,7 @@
     font-family: var(--fonte-poppins);
     font-size: 2rem;
     font-weight: bold;
+    border: none;
     border-radius: 15px;
     padding: 20px 85px 20px 85px;
 }
