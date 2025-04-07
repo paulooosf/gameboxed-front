@@ -29,7 +29,9 @@ function Header({ modo }) {
               <li>
                 <Link to="/">INÍCIO</Link>
               </li>
-              <li><a href="">ENTRAR</a></li>
+              <li>
+                <Link to="/login">ENTRAR</Link>
+              </li>
               <li>
                 <Link to="/registro">CRIAR CONTA</Link>
               </li>

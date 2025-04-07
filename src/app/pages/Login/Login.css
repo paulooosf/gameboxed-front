@@ -1,33 +1,21 @@
-.registro__container {
+.login__container {
     display: flex;
     flex-direction: column;
     margin: 5rem 0 0 12rem;
+    gap: 1.2rem;
     align-items: start;
 }
 
-.registro__intro {
+.login__intro {
     margin-bottom: 2rem;
 }
 
-.registro__titulo {
+.login__titulo {
     font-family: var(--fonte-big-shoulders);
     font-size: 3.7rem;
 }
 
-.registro__subtitulo {
-    font-family: var(--fonte-poppins);
-    color: var(--cor-verde-claro);
-    font-weight: 200;
-    font-size: 1.5rem;
-}
-
-.registro__form__container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-}
-
-.registro__background {
+.login__background {
     width: auto;
     height: 100vh;
     position: absolute;
@@ -36,7 +24,13 @@
     z-index: -1;
 }
 
-.registro__botao {
+.login__form__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.login__botao {
     width: 330px;
     background-color: var(--cor-verde-claro);
     color: var(--cor-fundo);
@@ -49,18 +43,22 @@
     margin-top: 1rem;
 }
 
-.registro__botao:hover {
+.login__botao:hover {
     cursor: pointer;
     background-color: #EEFFD9;
 }
 
-.registro__tipografia {
+.login__tipografia {
     font-family: var(--fonte-segoe-ui);
     font-weight: 200;
     font-size: 1rem;
     align-self: center;
 }
 
-.registro__link {
+.login__link {
+    font-family: var(--fonte-segoe-ui);
+    font-weight: 200;
+    font-size: 1rem;
+    align-self: center;
     color: var(--cor-verde-claro);
 }
