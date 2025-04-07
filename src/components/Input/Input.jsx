@@ -34,7 +34,7 @@ function Input({ modo, legenda, erro }) {
                     {mostraSenha ? <FaEyeSlash/> : <FaEye/>}
                     </span>
                 </div>
-                {erro && <p className="erro">{erro}</p>}h
+                {erro && <p className="erro">{erro}</p>}
             </div>
         )}
     </>
