@@ -3,7 +3,7 @@ import './Input.css'
 import { useState } from 'react'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-function Input({ modo, legenda, erro }) {
+function Input({ modo, legenda, erro, value, onChange }) {
     const [mostraSenha, setMostraSenha] = useState(false)
 
   return (
@@ -14,6 +14,8 @@ function Input({ modo, legenda, erro }) {
                 <input
                     type="text"
                     className="input"
+                    value={value}
+                    onChange={onChange}
                 />
                 {erro && <p className="erro">{erro}</p>}
             </div>
@@ -26,6 +28,8 @@ function Input({ modo, legenda, erro }) {
                     <input
                         type={mostraSenha ? "text" : "password"}
                         className="input"
+                        value={value}
+                        onChange={onChange}
                     />
                     <span 
                     onClick={() => setMostraSenha(!mostraSenha)}
