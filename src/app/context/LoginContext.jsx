@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { logar, registrar, sair } from "../../api/autenticacao";
+import { toast } from "react-toastify";
 
 export const LoginContext = createContext({})
 
@@ -22,6 +23,7 @@ export const LoginProvider = ({ children }) => {
             setLogado(true)
             return true
         } catch (erro) {
+            toast.error('Erro ao realizar login, verifique as credenciais.')
             console.error('Erro no login: ' + erro)
             throw erro
         }
@@ -31,6 +33,7 @@ export const LoginProvider = ({ children }) => {
         try {
             await registrar(apelido, email, senha)
         } catch (erro) {
+            toast.error('Erro ao realizar cadastro, verifique as credenciais.')
             console.error('Erro no registro: ' + erro)
             throw erro
         }

@@ -4,8 +4,18 @@ import Pesquisa from '../Pesquisa/Pesquisa'
 import './Header.css'
 import './MenuHamburguer.css'
 import { Link } from 'react-router-dom'
+import { useLogin } from '../../app/context/LoginContext'
+import { useNavigate } from "react-router"
 
 function Header({ modo }) {
+  let navigate = useNavigate()
+  const { logout } = useLogin()
+
+  const handleLogout = () => {
+    logout()
+    navigate('/')
+  }
+
   return (
     <header className={`header__${modo}`}>
         <img src={Logo} alt="Logotipo do GameboXed" className="header__logo" />
@@ -17,7 +27,7 @@ function Header({ modo }) {
                 <Link to="/">INÍCIO</Link>
               </li>
               <li><a href="">EM ALTA</a></li>
-              <li><a href="">SAIR</a></li>
+              <li><a href="" onClick={handleLogout}>SAIR</a></li>
             </ul>
           </>
         )}

@@ -1,25 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../../../components/Header/Header'
 import Footer from '../../../components/Footer/Footer'
 import Background from '../../../assets/background-inicio.png'
 import Card from '../../../components/Card/Card'
 import './Inicio.css'
 import { Link, useNavigate } from 'react-router-dom'
+import { useLogin } from '../../context/LoginContext'
 
 function Inicio() {
   const navigate = useNavigate()
+  const { logado } = useLogin()
 
   return (
     <div className="inicio">
       <img src={Background} alt="Imagem de fundo do site, uma arte do jogo Valorant" className="inicio__background"/>
-      <Header modo="deslogado"/>
+      <Header modo={logado ? 'logado' : 'deslogado'}/>
       <section className="inicio__intro">
         <p className="inicio__intro__tipografia">Avalie jogos.</p>
         <p className="inicio__intro__tipografia">Compartilhe sua experiência.</p>
         <p className="inicio__intro__tipografia">Descubra novas possibilidades.</p>
-        <Link to="/registro">
-          <button className="inicio__intro__botao">Registre-se!</button>
-        </Link>
+        {!logado && (
+          <Link to="/registro">
+            <button className="inicio__intro__botao">Registre-se!</button>
+          </Link>
+        )}
       </section>
       <section className="inicio__em__alta">
         <p className="inicio__em__alta__tipografia">Em alta:</p>
