@@ -8,7 +8,7 @@ function AppRouter() {
     return (
         <Routes>
             <Route path="/" element={<Inicio/>}/>
-            <Route path="/jogo" element={<Jogo/>}/>
+            <Route path="/jogo/:id" element={<Jogo/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/registro" element={<Registro/>}/>
         </Routes>
