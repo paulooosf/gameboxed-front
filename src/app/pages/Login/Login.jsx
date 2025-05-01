@@ -3,6 +3,7 @@ import './Login.css'
 import Header from '../../../components/Header/Header'
 import Background from '../../../assets/fallguys.png'
 import Input from '../../../components/Input/Input'
+import ModalEsqueciSenha from '../../../components/ModalEsqueciSenha/ModalEsqueciSenha'
 import { Link } from 'react-router-dom'
 import { useLogin } from '../../context/LoginContext'
 import { useNavigate } from "react-router"
@@ -14,6 +15,7 @@ function Login() {
   const [apelido, setApelido] = useState('')
   const [senha, setSenha] = useState('')
   const [erro, setErro] = useState({ apelido: '', senha: '' })
+  const [mostrarModal, setMostrarModal] = useState(false)
 
   useEffect(() => {
     if (logado) {
@@ -72,10 +74,13 @@ function Login() {
               onChange={event => setSenha(event.target.value)}
               erro={erro.senha}
             />
-            <a href="" className="login__link">Esqueceu sua senha?</a>
-            <button className="login__botao" onClick={handleLogin}>Entrar</button>
+            <a onClick={() => setMostrarModal(true)} className="login__link">Esqueceu sua senha?</a>
+            <button className="login__botao" onClick={handleLogin}>
+              Entrar
+            </button>
             <p className="login__tipografia">Ainda não possui uma conta? <Link to="/registro" className="login__link">Cadastre-se!</Link></p>
           </div>
+          <ModalEsqueciSenha mostrar={mostrarModal} handleFechar={() => setMostrarModal(false)}/>
         </div>
     </>
   )

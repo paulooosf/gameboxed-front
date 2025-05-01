@@ -60,5 +60,10 @@
     font-weight: 200;
     font-size: 1rem;
     align-self: center;
+    text-decoration: underline;
     color: var(--cor-verde-claro);
+}
+
+.login__link:hover {
+    cursor: pointer;
 }
