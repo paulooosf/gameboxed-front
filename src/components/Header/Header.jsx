@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { useLogin } from '../../app/context/LoginContext'
 import { useNavigate } from "react-router"
 import { FaCaretDown } from 'react-icons/fa'
+import { toast } from 'react-toastify'
 
 function Header({ modo }) {
   let navigate = useNavigate()
@@ -13,6 +14,7 @@ function Header({ modo }) {
 
   const handleLogout = () => {
     logout()
+    toast.success('Você se desconectou com sucesso! O redirecionamos à página inicial.')
     navigate('/')
   }
 

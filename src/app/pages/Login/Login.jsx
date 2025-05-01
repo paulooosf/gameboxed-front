@@ -42,6 +42,7 @@ function Login() {
     if (validar()) {
       try {
         const logado = await login(apelido, senha)
+        toast.success('Você logou com sucesso! O redirecionamos à página inicial.')
         if (logado) navigate('/')
       } catch (erro) {
         console.log('ERRO: ' + erro)
