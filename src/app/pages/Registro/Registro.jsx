@@ -10,7 +10,7 @@ import { toast } from 'react-toastify'
 
 function Registro() {
   let navigate = useNavigate()
-  const { logado, login, register } = useLogin()
+  const { logado, login, registrar } = useLogin()
   const [apelido, setApelido] = useState('')
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
@@ -63,10 +63,11 @@ function Registro() {
   const handleRegistrar = async () => {
     if (validar()) {
       try {
-        await register(apelido, email, senha)
+        await registrar(apelido, email, senha)
         const logado = await login(apelido, senha)
+        toast.success('Você se registrou com sucesso! O redirecionamos à página inicial.')
         if (logado) navigate('/')
-      } catch (error) {
+      } catch (erro) {
         console.log('ERRO: ' + erro)
       }
     } else {
@@ -105,7 +106,9 @@ function Registro() {
               onChange={event => setSenha(event.target.value)}
               erro={erro.senha}
             />
-            <button className="registro__botao" onClick={handleRegistrar}>Criar conta</button>
+            <button className="registro__botao" onClick={handleRegistrar}>
+              Criar conta
+            </button>
             <p className="registro__tipografia">Já possui uma conta? <Link to="/login" className="login__link">Faça login!</Link></p>
           </div>
         </div>
