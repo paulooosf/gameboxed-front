@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 
 const API_URL = 'http://localhost:8080'
 
-export const logar = async (apelido, senha) => {
+export const postLogin = async (apelido, senha) => {
     const resposta = await axios.post(`${API_URL}/autenticar/login`, {
         apelido,
         senha
@@ -17,11 +17,12 @@ export const logar = async (apelido, senha) => {
         expires: 1,
         sameSite: 'Lax'
     })
+    localStorage.setItem("apelido", apelido)
 
     return token 
 }
 
-export const registrar = async (apelido, email, senha) => {
+export const postRegistrar = async (apelido, email, senha) => {
     const resposta = await axios.post(`${API_URL}/usuarios`, {
         apelido,
         email,
@@ -31,6 +32,24 @@ export const registrar = async (apelido, email, senha) => {
     return resposta.data
 }
 
+export const postSolicitarTokenSenha = async (email) => {
+    const resposta = await axios.post(`${API_URL}/autenticar/esqueci-senha`, {
+        email
+    })
+
+    return resposta.data
+}
+
+export const postRedefinirSenha = async (token, senha) => {
+    const resposta = await axios.post(`${API_URL}/autenticar/redefinir-senha`, {
+        token,
+        senha
+    })
+
+    return resposta.data
+}
+
 export const sair = () => {
     Cookies.remove("token")
+    localStorage.removeItem("apelido")
 }
