@@ -2,14 +2,14 @@ import React from 'react'
 import Logo from '../../assets/logo.png'
 import Pesquisa from '../Pesquisa/Pesquisa'
 import './Header.css'
-import './MenuHamburguer.css'
 import { Link } from 'react-router-dom'
 import { useLogin } from '../../app/context/LoginContext'
 import { useNavigate } from "react-router"
+import { FaCaretDown } from 'react-icons/fa'
 
 function Header({ modo }) {
   let navigate = useNavigate()
-  const { logout } = useLogin()
+  const { apelido, logout } = useLogin()
 
   const handleLogout = () => {
     logout()
@@ -27,7 +27,16 @@ function Header({ modo }) {
                 <Link to="/">INÍCIO</Link>
               </li>
               <li><a href="">EM ALTA</a></li>
-              <li><a href="" onClick={handleLogout}>SAIR</a></li>
+              <li>
+                <div className="dropdown">
+                  <button className="dropdown__titulo">
+                    {apelido} <FaCaretDown/>
+                  </button>
+                  <div className="dropdown__opcoes">
+                    <p onClick={handleLogout}>SAIR</p>
+                  </div>
+                </div>
+              </li>
             </ul>
           </>
         )}
