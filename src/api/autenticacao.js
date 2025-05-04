@@ -17,7 +17,7 @@ export const postLogin = async (apelido, senha) => {
         expires: 1,
         sameSite: 'Lax'
     })
-    localStorage.setItem("apelido", apelido)
+    localStorage.setItem('apelido', apelido)
 
     return token 
 }
@@ -50,6 +50,6 @@ export const postRedefinirSenha = async (token, senha) => {
 }
 
 export const sair = () => {
-    Cookies.remove("token")
-    localStorage.removeItem("apelido")
+    Cookies.remove('token')
+    localStorage.removeItem('apelido')
 }
