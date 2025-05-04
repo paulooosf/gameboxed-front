@@ -9,6 +9,16 @@ function Avaliacao({ avaliacao, handleAtualizar }) {
   const { apelido } = useLogin()
   const [mostrarModalInserirAvaliacoes, setMostrarModalInserirAvaliacoes] = useState(false)
 
+  if (typeof avaliacao === 'string') {
+    return (
+      <div className="avaliacao__container">
+        <div className="avaliacao__vazia">
+          <p>{avaliacao}</p>  
+        </div>
+      </div>
+    )
+  }  
+
   return (
     <div className="avaliacao__container">
         <div className="tipografia">

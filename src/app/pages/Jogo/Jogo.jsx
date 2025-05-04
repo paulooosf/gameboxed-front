@@ -66,16 +66,16 @@ function Jogo() {
             </section>
         </article>
         <article className="jogo__avaliacoes">
+            <div className="jogo__avaliacoes__tipografias">
+                <p className="jogo__avaliacoes__tipografia__recentes">Avaliações recentes:</p>
+                {jogo?.avaliacoes?.length > 4 && (
+                    <button className="jogo__avaliacoes__tipografia__ver__mais" onClick={() => setMostrarModalAvaliacoes(true)}>Ver mais</button>
+                )}
+            </div>
             {jogo?.avaliacoes?.length === 0 ? (
-                <Avaliacao avaliacao="Sem avaliações!"/>
+                <Avaliacao avaliacao="Sem avaliações até o momento!"/>
             ) : (
                 <>
-                    <div className="jogo__avaliacoes__tipografias">
-                        <p className="jogo__avaliacoes__tipografia__recentes">Avaliações recentes:</p>
-                        {jogo?.avaliacoes?.length > 4 && (
-                            <button className="jogo__avaliacoes__tipografia__ver__mais" onClick={() => setMostrarModalAvaliacoes(true)}>Ver mais</button>
-                        )}
-                    </div>
                     <div className="jogo__avaliacoes__cards">
                         {jogo?.avaliacoes?.toReversed().slice(0, 4).map(avaliacao => (
                             <Avaliacao

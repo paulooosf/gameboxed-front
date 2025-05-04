@@ -10,6 +10,17 @@
     max-height: 300%;
 }
 
+.avaliacao__vazia {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.avaliacao__vazia p {
+    font-family: var(--fonte-segoe-ui);
+    font-size: 1.5rem;
+}
+
 .tipografia {
     max-width: 70%;
 }
