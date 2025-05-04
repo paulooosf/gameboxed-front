@@ -1,7 +1,7 @@
-import './ModalAvaliacoes.css'
+import './ModalListarAvaliacoes.css'
 import Avaliacao from '../Avaliacao/Avaliacao'
 
-function ModalAvaliacoes({ mostrar, handleFechar, avaliacoes, titulo }) {
+function ModalListarAvaliacoes({ mostrar, handleFechar, handleAtualizar, avaliacoes, titulo }) {
   if (!mostrar) return null
 
   return (
@@ -19,9 +19,8 @@ function ModalAvaliacoes({ mostrar, handleFechar, avaliacoes, titulo }) {
         {avaliacoes.map((avaliacao) => (
           <Avaliacao
             key={avaliacao.id}
-            usuario={avaliacao.usuario}
-            avaliacao={avaliacao.comentario}
-            nota={avaliacao.nota}
+            avaliacao={avaliacao}
+            handleAtualizar={handleAtualizar}
           />
         ))}
       </div>
@@ -29,4 +28,4 @@ function ModalAvaliacoes({ mostrar, handleFechar, avaliacoes, titulo }) {
   )
 }
 
-export default ModalAvaliacoes
+export default ModalListarAvaliacoes
