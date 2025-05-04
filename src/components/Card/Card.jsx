@@ -1,17 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+/* eslint-disable react/prop-types */
 import { FaStar } from 'react-icons/fa'
 import './Card.css'
 
-function Card(props) {
+function Card({ capa, titulo, nota }) {
   return (
     <div className="container">
         <div className="card">
-            <img src={props.capa} alt="Capa do Jogo" className="card__imagem"/>
+            <img src={capa} alt="Capa do Jogo" className="card__imagem"/>
             <div className="card__tipografias">
-                <p className="card__titulo">{props.titulo}</p>
+                <p className="card__titulo">{titulo}</p>
                 <div className="card__nota">
-                    <p className="card__nota__numero">{props.nota}</p>
+                    <p className="card__nota__numero">{nota}</p>
                     <div className="card__nota__estrela">
                         <FaStar/>
                     </div>
