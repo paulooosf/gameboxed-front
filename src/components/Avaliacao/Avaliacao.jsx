@@ -4,10 +4,12 @@ import './Avaliacao.css'
 import { FaStar, FaEdit, FaTrash } from 'react-icons/fa'
 import { useLogin } from '../../app/context/LoginContext'
 import ModalInserirAvaliacoes from '../ModalInserirAvaliacoes/ModalInserirAvaliacoes'
+import ModalConfirmacao from '../ModalConfirmacao/ModalConfirmacao'
 
 function Avaliacao({ avaliacao, handleAtualizar }) {
   const { apelido } = useLogin()
   const [mostrarModalInserirAvaliacoes, setMostrarModalInserirAvaliacoes] = useState(false)
+  const [mostrarModalConfirmar, setMostrarModalConfirmar] = useState(false)
 
   if (typeof avaliacao === 'string') {
     return (
@@ -31,7 +33,7 @@ function Avaliacao({ avaliacao, handleAtualizar }) {
               <button className="botao__icone" onClick={() => setMostrarModalInserirAvaliacoes(true)} title="Editar">
                 <FaEdit/>
               </button>
-              <button className="botao__icone" title="Excluir">
+              <button className="botao__icone" onClick={() => setMostrarModalConfirmar(true)} title="Excluir">
                 <FaTrash/>
               </button>
             </div>
@@ -42,6 +44,7 @@ function Avaliacao({ avaliacao, handleAtualizar }) {
           </div>
         </div>
         <ModalInserirAvaliacoes mostrar={mostrarModalInserirAvaliacoes} avaliacao={avaliacao} handleFechar={() => setMostrarModalInserirAvaliacoes(false)} handleAtualizar={handleAtualizar} modo="editar" idJogo={avaliacao.jogo.id} tituloJogo={avaliacao.jogo.nome}/>
+        <ModalConfirmacao mostrar={mostrarModalConfirmar} handleFechar={() => setMostrarModalConfirmar(false)} handleAtualizar={handleAtualizar} idAvaliacao={avaliacao.id}/>
     </div>
   )
 }
