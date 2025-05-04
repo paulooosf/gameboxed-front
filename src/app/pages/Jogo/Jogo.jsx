@@ -8,11 +8,13 @@ import { useParams } from 'react-router-dom'
 import { getJogo } from '../../../api/jogos'
 import { toast } from 'react-toastify'
 import { useLogin } from '../../context/LoginContext'
+import ModalAvaliacoes from '../../../components/ModalAvaliacoes/ModalAvaliacoes'
 
 function Jogo() {
     const { id } = useParams()
     const { logado } = useLogin()
     const [jogo, setJogo] = useState({})
+    const [mostrarModal, setMostrarModal] = useState(false)
 
     useEffect(() => {
         const carregarDados = async () => {
@@ -54,26 +56,35 @@ function Jogo() {
                     </div>
                 </div>
                 <p className="jogo__sobre__avaliacoes__quantidade">{jogo.quantidadeAvaliacoes === 1 ? jogo.quantidadeAvaliacoes + ' Avaliação' : jogo.quantidadeAvaliacoes + ' Avaliações'}</p>
-                <button className="jogo__sobre__avaliacoes__botao__avaliar">Avaliar</button>
+                {logado && (
+                    <button className="jogo__sobre__avaliacoes__botao__avaliar">Avaliar</button>
+                )}
             </section>
         </article>
         <article className="jogo__avaliacoes">
-            <div className="jogo__avaliacoes__tipografias">
-                <p className="jogo__avaliacoes__tipografia__recentes">Avaliações recentes:</p>
-                <button className="jogo__avaliacoes__tipografia__ver__mais">Ver mais</button>
-            </div>
-            <div className="jogo__avaliacoes__cards">
-                <Avaliacao
-                    titulo="Avaliação de racemaster123:"
-                    avaliacao="Que jogo incrível!! Passei horas fazendo diversas corridas e nem vi o tempo passar."
-                    nota="5"
-                />
-                <Avaliacao
-                    titulo="Avaliação de racemaster123:"
-                    avaliacao="Que jogo incrível!! Passei horas fazendo diversas corridas e nem vi o tempo passar."
-                    nota="5"
-                />
-            </div>
+            {jogo?.avaliacoes?.length === 0 ? (
+                <Avaliacao avaliacao="Sem avaliações!"/>
+            ) : (
+                <>
+                    <div className="jogo__avaliacoes__tipografias">
+                        <p className="jogo__avaliacoes__tipografia__recentes">Avaliações recentes:</p>
+                        {jogo?.avaliacoes?.length > 4 && (
+                            <button className="jogo__avaliacoes__tipografia__ver__mais" onClick={() => setMostrarModal(true)}>Ver mais</button>
+                        )}
+                    </div>
+                    <div className="jogo__avaliacoes__cards">
+                        {jogo?.avaliacoes?.slice(0, 4).map(avaliacao => (
+                            <Avaliacao
+                                key={avaliacao.id}
+                                usuario={avaliacao.usuario}
+                                avaliacao={avaliacao.comentario}
+                                nota={avaliacao.nota}
+                            />
+                        ))}
+                    </div>
+                </>
+            )}
+            <ModalAvaliacoes mostrar={mostrarModal} handleFechar={() => setMostrarModal(false)} avaliacoes={jogo.avaliacoes} titulo={jogo.nome}/>
         </article>
         <article className="jogo__trailer">
             {jogo.linkTrailer && (
