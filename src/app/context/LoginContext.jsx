@@ -23,6 +23,7 @@ export const LoginProvider = ({ children }) => {
             const token = await postLogin(apelido, senha)
             if (!token) throw new Error('Token inválido!')
             setLogado(true)
+            setApelido(apelido)
             return true
         } catch (erro) {
             toast.error('Erro ao realizar login, verifique as credenciais.')
@@ -63,6 +64,7 @@ export const LoginProvider = ({ children }) => {
 
     const logout = () => {
         sair()
+        setApelido('')
         setLogado(false)
     }
 
