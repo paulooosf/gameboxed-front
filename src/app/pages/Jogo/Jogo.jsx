@@ -8,13 +8,16 @@ import { useParams } from 'react-router-dom'
 import { getJogo } from '../../../api/jogos'
 import { toast } from 'react-toastify'
 import { useLogin } from '../../context/LoginContext'
-import ModalAvaliacoes from '../../../components/ModalAvaliacoes/ModalAvaliacoes'
+import ModalListarAvaliacoes from '../../../components/ModalListarAvaliacoes/ModalListarAvaliacoes'
+import ModalInserirAvaliacoes from '../../../components/ModalInserirAvaliacoes/ModalInserirAvaliacoes'
 
 function Jogo() {
     const { id } = useParams()
     const { logado } = useLogin()
     const [jogo, setJogo] = useState({})
-    const [mostrarModal, setMostrarModal] = useState(false)
+    const [mostrarModalAvaliacoes, setMostrarModalAvaliacoes] = useState(false)
+    const [mostrarModalInserirAvaliacoes, setMostrarModalInserirAvaliacoes] = useState(false)
+    const [atualizar, setAtualizar] = useState(false)
 
     useEffect(() => {
         const carregarDados = async () => {
@@ -28,7 +31,7 @@ function Jogo() {
         }
 
         carregarDados()
-    }, [])
+    }, [atualizar])
 
   return (
     <div className="jogo">
@@ -57,7 +60,7 @@ function Jogo() {
                 </div>
                 <p className="jogo__sobre__avaliacoes__quantidade">{jogo.quantidadeAvaliacoes === 1 ? jogo.quantidadeAvaliacoes + ' Avaliação' : jogo.quantidadeAvaliacoes + ' Avaliações'}</p>
                 {logado && (
-                    <button className="jogo__sobre__avaliacoes__botao__avaliar">Avaliar</button>
+                    <button className="jogo__sobre__avaliacoes__botao__avaliar" onClick={() => setMostrarModalInserirAvaliacoes(true)}>Avaliar</button>
                 )}
             </section>
         </article>
@@ -69,22 +72,22 @@ function Jogo() {
                     <div className="jogo__avaliacoes__tipografias">
                         <p className="jogo__avaliacoes__tipografia__recentes">Avaliações recentes:</p>
                         {jogo?.avaliacoes?.length > 4 && (
-                            <button className="jogo__avaliacoes__tipografia__ver__mais" onClick={() => setMostrarModal(true)}>Ver mais</button>
+                            <button className="jogo__avaliacoes__tipografia__ver__mais" onClick={() => setMostrarModalAvaliacoes(true)}>Ver mais</button>
                         )}
                     </div>
                     <div className="jogo__avaliacoes__cards">
-                        {jogo?.avaliacoes?.slice(0, 4).map(avaliacao => (
+                        {jogo?.avaliacoes?.toReversed().slice(0, 4).map(avaliacao => (
                             <Avaliacao
                                 key={avaliacao.id}
-                                usuario={avaliacao.usuario}
-                                avaliacao={avaliacao.comentario}
-                                nota={avaliacao.nota}
+                                avaliacao={avaliacao}
+                                handleAtualizar={() => setAtualizar(prev => !prev)}
                             />
                         ))}
                     </div>
                 </>
             )}
-            <ModalAvaliacoes mostrar={mostrarModal} handleFechar={() => setMostrarModal(false)} avaliacoes={jogo.avaliacoes} titulo={jogo.nome}/>
+            <ModalInserirAvaliacoes mostrar={mostrarModalInserirAvaliacoes} handleFechar={() => setMostrarModalInserirAvaliacoes(false)} handleAtualizar={() => setAtualizar(prev => !prev)} modo="avaliar" idJogo={jogo.id} tituloJogo={jogo.nome}/>
+            <ModalListarAvaliacoes mostrar={mostrarModalAvaliacoes} handleFechar={() => setMostrarModalAvaliacoes(false)} handleAtualizar={() => setAtualizar(prev => !prev)} avaliacoes={jogo.avaliacoes} titulo={jogo.nome}/>
         </article>
         <article className="jogo__trailer">
             {jogo.linkTrailer && (
