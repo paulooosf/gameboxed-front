@@ -21,6 +21,18 @@ function Input({ modo, legenda, erro, value, onChange }) {
             </div>
         )}
 
+        {modo === 'textarea' && (
+            <div className="input__itens">
+                <p className="legenda">{legenda}</p>
+                <textarea
+                    className="input"
+                    value={value}
+                    onChange={onChange}
+                />
+                {erro && <p className="erro">{erro}</p>}
+            </div>
+        )}
+
         {modo === 'senha' && (
             <div className="input__itens">
                 <p className="legenda">{legenda}</p>

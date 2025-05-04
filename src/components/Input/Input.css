@@ -4,6 +4,14 @@
     width: 330px;
 }
 
+.input__itens textarea {
+    height: 400px;
+    width: 500px;
+    align-self: center;
+    border: none;
+    background: #242933;
+}
+
 .legenda {
     font-family: var(--fonte-segoe-ui);
     font-size: 1.3rem;
