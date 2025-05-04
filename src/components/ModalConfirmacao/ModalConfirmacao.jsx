@@ -2,17 +2,24 @@
 import { toast } from 'react-toastify'
 import { deleteAvaliacao } from '../../api/avaliacoes'
 import './ModalConfirmacao.css'
+import { PulseLoader } from 'react-spinners'
+import { useState } from 'react'
 
 function ModalConfirmacao({ mostrar, handleFechar, handleAtualizar, idAvaliacao }) {
+  const [carregando, setCarregando] = useState(false)
+  
   if (!mostrar) return null
 
   const handleDeleteAvaliacao = async () => {
     try {
+      setCarregando(true)
       await deleteAvaliacao(idAvaliacao)
       toast.success('Avaliação removida com sucesso!')
       handleAtualizar()
+      setCarregando(false)
       handleFechar()
     } catch (erro) {
+      setCarregando(false)
       toast.error('Erro ao remover avaliação!')
       console.error('Erro na remoção de avaliação: ' + erro)
     }
@@ -35,7 +42,11 @@ function ModalConfirmacao({ mostrar, handleFechar, handleAtualizar, idAvaliacao 
             Cancelar
           </button>
           <button className="modal__confirmacao__botao__enviar" onClick={handleDeleteAvaliacao}>
-            Apagar
+            {carregando ? (
+              <PulseLoader size={10} color="#13171E"/>
+            ) : (
+              'Apagar'
+            )}
           </button>
         </div>
       </div>

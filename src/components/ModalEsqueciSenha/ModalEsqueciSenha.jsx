@@ -4,6 +4,7 @@ import './ModalEsqueciSenha.css'
 import { toast } from 'react-toastify'
 import Input from '../Input/Input'
 import { useLogin } from '../../app/context/LoginContext'
+import { PulseLoader } from 'react-spinners'
 
 function ModalEsqueciSenha({ mostrar, handleFechar }) {
   const { solicitarTokenSenha, redefinirSenha } = useLogin()
@@ -12,6 +13,7 @@ function ModalEsqueciSenha({ mostrar, handleFechar }) {
   const [token, setToken] = useState('')
   const [senha, setSenha] = useState('')
   const [confirmarSenha, setConfirmarSenha] = useState('')
+  const [carregando, setCarregando] = useState(false)
   const [erro, setErro] = useState({ email: '', token: '', senha: '' })
 
   useEffect(() => {
@@ -56,7 +58,9 @@ function ModalEsqueciSenha({ mostrar, handleFechar }) {
   const handleEnviarEmail = async () => {
     if (validarEmail()) {
       try {
+        setCarregando(true)
         await solicitarTokenSenha(email)
+        setCarregando(false)
         setAvancar(true)
       } catch (erro) {
         console.log('ERRO: ' + erro)
@@ -69,10 +73,13 @@ function ModalEsqueciSenha({ mostrar, handleFechar }) {
   const handleRedefinirSenha = async () => {
     if (validarSenhas()) {
       try {
+        setCarregando(true)
         await redefinirSenha(token, senha)
         toast.success('Senha redefinida com sucesso!')
+        setCarregando(false)
         handleFechar()
       } catch (erro) {
+        setCarregando(false)
         console.log('ERRO: ' + erro)
       }
     } else {
@@ -105,7 +112,11 @@ function ModalEsqueciSenha({ mostrar, handleFechar }) {
               erro={erro.email}
             />
             <button className="modal__botao" onClick={handleEnviarEmail}>
-              Enviar e-mail
+              {carregando ? (
+                <PulseLoader size={10} color="#13171E"/>
+              ) : (
+                'Enviar e-mail'
+              )}
             </button>
           </>
         ) : (
@@ -132,7 +143,11 @@ function ModalEsqueciSenha({ mostrar, handleFechar }) {
                 erro={erro.senha}
               />
               <button className="modal__botao" onClick={handleRedefinirSenha}>
-                Redefinir
+                {carregando ? (
+                  <PulseLoader size={10} color="#13171E"/>
+                ) : (
+                  'Redefinir'
+                )}
               </button>
             </div>
           </>

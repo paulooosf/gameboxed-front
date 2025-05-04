@@ -8,12 +8,14 @@ import { Link } from 'react-router-dom'
 import { useLogin } from '../../context/LoginContext'
 import { useNavigate } from "react-router"
 import { toast } from 'react-toastify'
+import { PulseLoader } from 'react-spinners'
 
 function Login() {
   let navigate = useNavigate()
   const { logado, login } = useLogin()
   const [apelido, setApelido] = useState('')
   const [senha, setSenha] = useState('')
+  const [carregando, setCarregando] = useState(false)
   const [erro, setErro] = useState({ apelido: '', senha: '' })
   const [mostrarModal, setMostrarModal] = useState(false)
 
@@ -41,10 +43,13 @@ function Login() {
   const handleLogin = async () => {
     if (validar()) {
       try {
+        setCarregando(true)
         const logado = await login(apelido, senha)
         toast.success('Você logou com sucesso! O redirecionamos à página inicial.')
+        setCarregando(false)
         if (logado) navigate('/')
       } catch (erro) {
+        setCarregando(false)
         console.log('ERRO: ' + erro)
       }
     } else {
@@ -77,7 +82,11 @@ function Login() {
             />
             <a onClick={() => setMostrarModal(true)} className="login__link">Esqueceu sua senha?</a>
             <button className="login__botao" onClick={handleLogin}>
-              Entrar
+              {carregando ? (
+                <PulseLoader size={10} color="#13171E"/>
+              ) : (
+                'Entrar'
+              )}
             </button>
             <p className="login__tipografia">Ainda não possui uma conta? <Link to="/registro" className="login__link">Cadastre-se!</Link></p>
           </div>

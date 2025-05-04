@@ -6,10 +6,12 @@ import { toast } from 'react-toastify'
 import { postAvaliacao, putAvaliacao } from '../../api/avaliacoes'
 import Input from '../Input/Input'
 import { FaStar } from 'react-icons/fa'
+import { PulseLoader } from 'react-spinners'
 
 function ModalInserirAvaliacoes({ mostrar, handleFechar, handleAtualizar, modo, idJogo, tituloJogo, avaliacao }) {
   const [comentario, setComentario] = useState('')
   const [nota, setNota] = useState('')
+  const [carregando, setCarregando] = useState(false)
   const [erro, setErro] = useState({ comentario: '', nota: ''})
   const [hover, setHover] = useState(0)
 
@@ -42,11 +44,14 @@ function ModalInserirAvaliacoes({ mostrar, handleFechar, handleAtualizar, modo, 
   const handlePostAvaliacao = async () => {
     if (validar()) {
       try {
+        setCarregando(true)
         await postAvaliacao(comentario, nota, idJogo)
         toast.success('Avaliação realizada com sucesso!')
         handleAtualizar()
+        setCarregando(true)
         handleFechar()
       } catch (erro) {
+        setCarregando(false)
         toast.error('Erro ao postar avaliação!')
         console.error('Erro na postagem de avaliação: ' + erro)
       }
@@ -58,11 +63,14 @@ function ModalInserirAvaliacoes({ mostrar, handleFechar, handleAtualizar, modo, 
   const handlePutAvaliacao = async () => {
     if (validar()) {
       try {
+        setCarregando(true)
         await putAvaliacao(avaliacao.id, comentario, nota, idJogo)
         toast.success('Avaliação editada com sucesso!')
         handleAtualizar()
+        setCarregando(false)
         handleFechar()
       } catch (erro) {
+        setCarregando(false)
         toast.error('Erro ao editar avaliação!')
         console.error('Erro na edição de avaliação: ' + erro)
       }
@@ -115,7 +123,11 @@ function ModalInserirAvaliacoes({ mostrar, handleFechar, handleAtualizar, modo, 
             Cancelar
           </button>
           <button className="modal__inserir__botao__enviar" onClick={modo === 'avaliar' ? handlePostAvaliacao : handlePutAvaliacao}>
-            {modo === 'avaliar' ? 'Enviar' : 'Editar'}
+            {carregando ? (
+              <PulseLoader size={10} color="#13171E"/>
+            ) : (
+              modo === 'avaliar' ? 'Enviar' : 'Editar'
+            )}
           </button>
         </div>
       </div>

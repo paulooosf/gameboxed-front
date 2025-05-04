@@ -7,6 +7,7 @@ import { Link } from 'react-router'
 import { useLogin } from '../../context/LoginContext'
 import { useNavigate } from "react-router"
 import { toast } from 'react-toastify'
+import { PulseLoader } from 'react-spinners'
 
 function Registro() {
   let navigate = useNavigate()
@@ -14,6 +15,7 @@ function Registro() {
   const [apelido, setApelido] = useState('')
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
+  const [carregando, setCarregando] = useState(false)
   const [erro, setErro] = useState({ apelido: '', email: '', senha: '' })
 
   useEffect(() => {
@@ -63,11 +65,14 @@ function Registro() {
   const handleRegistrar = async () => {
     if (validar()) {
       try {
+        setCarregando(true)
         await registrar(apelido, email, senha)
         const logado = await login(apelido, senha)
         toast.success('Você se registrou com sucesso! O redirecionamos à página inicial.')
+        setCarregando(false)
         if (logado) navigate('/')
       } catch (erro) {
+        setCarregando(false)
         console.log('ERRO: ' + erro)
       }
     } else {
@@ -107,7 +112,11 @@ function Registro() {
               erro={erro.senha}
             />
             <button className="registro__botao" onClick={handleRegistrar}>
-              Criar conta
+              {carregando ? (
+                <PulseLoader size={10} color="#13171E"/>
+              ) : (
+                'Criar conta'
+              )}
             </button>
             <p className="registro__tipografia">Já possui uma conta? <Link to="/login" className="login__link">Faça login!</Link></p>
           </div>
