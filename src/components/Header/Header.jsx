@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 import Logo from '../../assets/logo.png'
 import Pesquisa from '../Pesquisa/Pesquisa'
 import './Header.css'

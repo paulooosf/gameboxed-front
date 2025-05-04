@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import './ModalListarAvaliacoes.css'
 import Avaliacao from '../Avaliacao/Avaliacao'
 

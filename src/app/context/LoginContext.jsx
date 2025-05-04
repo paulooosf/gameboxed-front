@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { postLogin, postRegistrar, postSolicitarTokenSenha, postRedefinirSenha, sair } from "../../api/autenticacao";

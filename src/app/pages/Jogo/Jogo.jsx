@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from 'react'
 import './Jogo.css'
 import Header from '../../../components/Header/Header'
 import Footer from '../../../components/Footer/Footer'

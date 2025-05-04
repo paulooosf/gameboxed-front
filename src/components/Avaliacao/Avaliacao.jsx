@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+/* eslint-disable react/prop-types */
+import { useState } from 'react'
 import './Avaliacao.css'
 import { FaStar, FaEdit, FaTrash } from 'react-icons/fa'
 import { useLogin } from '../../app/context/LoginContext'

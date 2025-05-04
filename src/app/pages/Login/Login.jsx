@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Login.css'
 import Header from '../../../components/Header/Header'
 import Background from '../../../assets/fallguys.png'

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from '../../../components/Header/Header'
 import Footer from '../../../components/Footer/Footer'
 import Background from '../../../assets/background-inicio.png'

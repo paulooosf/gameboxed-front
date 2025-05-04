@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 import './Input.css'
 import { useState } from 'react'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
