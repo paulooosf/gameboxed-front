@@ -23,6 +23,7 @@ function ModalInserirAvaliacoes({ mostrar, handleFechar, handleAtualizar, modo, 
       setComentario(avaliacao.comentario)
       setNota(avaliacao.nota)
     }
+    setCarregando(false)
     setErro({ comentario: '', nota: ''})
   }, [mostrar])
 
