@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { GoSearch } from "react-icons/go";
 import './Pesquisa.css'
 import { useState } from 'react';
