@@ -8,7 +8,7 @@ import { useNavigate } from "react-router"
 import { FaCaretDown } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 
-function Header({ modo }) {
+function Header({ modo, mostrarPesquisa = true }) {
   let navigate = useNavigate()
   const { apelido, logout } = useLogin()
 
@@ -23,7 +23,7 @@ function Header({ modo }) {
         <img src={Logo} alt="Logotipo do GameboXed" className="header__logo" />
         {modo === 'logado' && (
           <>
-            <Pesquisa/>
+            {mostrarPesquisa == true && <Pesquisa/>}
             <ul className="header__links">
               <li>
                 <Link to="/">INÍCIO</Link>
@@ -45,7 +45,7 @@ function Header({ modo }) {
 
         {modo === 'deslogado' && (
           <>
-            <Pesquisa/>
+            {mostrarPesquisa == true && <Pesquisa/>}
             <ul className="header__links">
               <li>
                 <Link to="/">INÍCIO</Link>
