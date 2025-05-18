@@ -12,9 +12,9 @@
   <a href="#créditos">Créditos</a>
 </div>
 
-## Vídeos e Capturas de Tela
+# Vídeos e Capturas de Tela
 <details><summary>Mostrar</summary>
-    <h1>Visão Geral</h1>
+    <h2>Visão Geral</h1>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/a3WwV8_MXiI?si=SK8Gf3e5-BM8Xo0J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <h2>Início</h1>
     <img alt="Captura de tela do projeto" src="https://i.imgur.com/wcLXn0J.jpeg">
