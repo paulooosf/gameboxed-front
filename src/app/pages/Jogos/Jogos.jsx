@@ -46,11 +46,7 @@ function Jogos() {
       <main className="jogos__resultado">
         {nomeJogo ? (
           <h1 className="jogos__resultado__tipografia">
-            Exibindo resultados para{' '}
-            <span className="jogos__resultado__tipografia__verde">
-              {nomeJogo}
-            </span>
-            :
+            Exibindo resultados para <span className="jogos__resultado__tipografia__verde">{nomeJogo}</span>:
           </h1>
         ) : (
           <h1 className="jogos__resultado__tipografia">Exibindo jogos:</h1>
@@ -58,15 +54,13 @@ function Jogos() {
         <div className="jogos__cards">
           <div className="cards__container">
             {jogos.map((jogo) => (
-              <>
-                <Link to={`/jogo/${jogo.id}`}>
-                  <Card
-                    capa={jogo.linkCapa}
-                    titulo={jogo.nome}
-                    nota={parseFloat(jogo.nota).toFixed(2)}
-                  />
-                </Link>
-              </>
+              <Link key={jogo.id} to={`/jogo/${jogo.id}`}>
+                <Card
+                  capa={jogo.linkCapa}
+                  titulo={jogo.nome}
+                  nota={parseFloat(jogo.nota).toFixed(2)}
+                />
+              </Link>
             ))}
           </div>
         </div>

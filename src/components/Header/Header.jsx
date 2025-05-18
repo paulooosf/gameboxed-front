@@ -25,13 +25,13 @@ function Header({ modo, mostrarPesquisa = true }) {
       <img src={Logo} alt="Logotipo do GameboXed" className="header__logo" />
       {modo === 'logado' && (
         <>
-          {mostrarPesquisa == true && <Pesquisa />}
+          {mostrarPesquisa && <Pesquisa />}
           <ul className="header__links">
             <li>
               <Link to="/">INÍCIO</Link>
             </li>
             <li>
-              <a href="">EM ALTA</a>
+              <Link to="/jogos">JOGOS</Link>
             </li>
             <li>
               <div className="dropdown">
@@ -49,7 +49,7 @@ function Header({ modo, mostrarPesquisa = true }) {
 
       {modo === 'deslogado' && (
         <>
-          {mostrarPesquisa == true && <Pesquisa />}
+          {mostrarPesquisa && <Pesquisa />}
           <ul className="header__links">
             <li>
               <Link to="/">INÍCIO</Link>

@@ -80,8 +80,5 @@
 .modal__botao:hover {
   cursor: pointer;
   background-color: #eeffd9;
-}
-
-.modal__botao:hover {
   opacity: 0.9;
 }

@@ -57,15 +57,13 @@ function Inicio() {
         <p className="inicio__em__alta__tipografia">Mais bem avaliados:</p>
         <div className="inicio__cards">
           {melhoresJogos.map((jogo) => (
-            <>
-              <Link to={`/jogo/${jogo.id}`}>
-                <Card
-                  capa={jogo.linkCapa}
-                  titulo={jogo.nome}
-                  nota={parseFloat(jogo.nota).toFixed(2)}
-                />
-              </Link>
-            </>
+            <Link key={jogo.id} to={`/jogo/${jogo.id}`}>
+              <Card
+                capa={jogo.linkCapa}
+                titulo={jogo.nome}
+                nota={parseFloat(jogo.nota).toFixed(2)}
+              />
+            </Link>
           ))}
         </div>
       </section>
@@ -75,15 +73,13 @@ function Inicio() {
         </p>
         <div className="inicio__cards">
           {jogosRecentes.map((jogo) => (
-            <>
-              <Link to={`/jogo/${jogo.id}`}>
-                <Card
-                  capa={jogo.linkCapa}
-                  titulo={jogo.nome}
-                  nota={parseFloat(jogo.nota).toFixed(2)}
-                />
-              </Link>
-            </>
+            <Link key={jogo.id} to={`/jogo/${jogo.id}`}>
+              <Card
+                capa={jogo.linkCapa}
+                titulo={jogo.nome}
+                nota={parseFloat(jogo.nota).toFixed(2)}
+              />
+            </Link>
           ))}
         </div>
       </section>

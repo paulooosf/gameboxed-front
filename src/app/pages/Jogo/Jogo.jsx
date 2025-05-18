@@ -102,20 +102,18 @@ function Jogo() {
         {jogo?.avaliacoes?.length === 0 ? (
           <Avaliacao avaliacao="Sem avaliações até o momento!" />
         ) : (
-          <>
-            <div className="jogo__avaliacoes__cards">
-              {jogo?.avaliacoes
-                ?.toReversed()
-                .slice(0, 4)
-                .map((avaliacao) => (
-                  <Avaliacao
-                    key={avaliacao.id}
-                    avaliacao={avaliacao}
-                    handleAtualizar={() => setAtualizar((prev) => !prev)}
-                  />
-                ))}
-            </div>
-          </>
+          <div className="jogo__avaliacoes__cards">
+            {jogo?.avaliacoes
+              ?.toReversed()
+              .slice(0, 4)
+              .map((avaliacao) => (
+                <Avaliacao
+                  key={avaliacao.id}
+                  avaliacao={avaliacao}
+                  handleAtualizar={() => setAtualizar((prev) => !prev)}
+                />
+              ))}
+          </div>
         )}
         <ModalInserirAvaliacoes
           mostrar={mostrarModalInserirAvaliacoes}

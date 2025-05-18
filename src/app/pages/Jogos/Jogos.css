@@ -80,7 +80,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 100%;
-  max-width: 1700px; /* Largura máxima da "área de exibição" */
+  max-width: 1700px;
   padding: 0 20px;
 }
 

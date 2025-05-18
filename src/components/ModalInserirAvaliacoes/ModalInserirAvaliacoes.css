@@ -130,9 +130,6 @@
   cursor: pointer;
   background-color: #eeffd9;
   color: var(--cor-fundo);
-}
-
-.modal__inserir__botao__cancelar:hover {
   opacity: 0.9;
 }
 
@@ -153,9 +150,6 @@
 .modal__inserir__botao__enviar:hover {
   cursor: pointer;
   background-color: #eeffd9;
-}
-
-.modal__inserir__botao__enviar:hover {
   opacity: 0.9;
 }
 

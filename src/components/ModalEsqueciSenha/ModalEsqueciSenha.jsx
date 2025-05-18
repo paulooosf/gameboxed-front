@@ -120,37 +120,35 @@ function ModalEsqueciSenha({ mostrar, handleFechar }) {
             </button>
           </>
         ) : (
-          <>
-            <div className="modal__form__container">
-              <Input
-                modo="texto"
-                legenda="Token"
-                value={token}
-                onChange={(event) => setToken(event.target.value)}
-                erro={erro.token}
-              />
-              <Input
-                modo="senha"
-                legenda="Nova senha"
-                value={senha}
-                onChange={(event) => setSenha(event.target.value)}
-              />
-              <Input
-                modo="senha"
-                legenda="Confirme a senha"
-                value={confirmarSenha}
-                onChange={(event) => setConfirmarSenha(event.target.value)}
-                erro={erro.senha}
-              />
-              <button className="modal__botao" onClick={handleRedefinirSenha}>
-                {carregando ? (
-                  <PulseLoader size={10} color="#13171E" />
-                ) : (
-                  'Redefinir'
-                )}
-              </button>
-            </div>
-          </>
+          <div className="modal__form__container">
+            <Input
+              modo="texto"
+              legenda="Token"
+              value={token}
+              onChange={(event) => setToken(event.target.value)}
+              erro={erro.token}
+            />
+            <Input
+              modo="senha"
+              legenda="Nova senha"
+              value={senha}
+              onChange={(event) => setSenha(event.target.value)}
+            />
+            <Input
+              modo="senha"
+              legenda="Confirme a senha"
+              value={confirmarSenha}
+              onChange={(event) => setConfirmarSenha(event.target.value)}
+              erro={erro.senha}
+            />
+            <button className="modal__botao" onClick={handleRedefinirSenha}>
+              {carregando ? (
+                <PulseLoader size={10} color="#13171E" />
+              ) : (
+                'Redefinir'
+              )}
+            </button>
+          </div>
         )}
       </div>
     </div>
