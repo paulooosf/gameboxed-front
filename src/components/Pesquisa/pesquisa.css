@@ -1,0 +1,55 @@
+.pesquisa {
+  position: relative;
+  width: 30vw;
+  align-self: center;
+}
+
+.pesquisa__icone {
+  position: absolute;
+  left: 15px;
+  top: 20%;
+  color: #757575;
+  font-size: 1.3rem;
+}
+
+.pesquisa__icone__grande {
+  position: absolute;
+  left: 25px;
+  top: 23%;
+  color: #757575;
+  font-size: 1.7rem;
+}
+
+.pesquisa__input {
+  width: 100%;
+  padding: 12px 12px 12px 50px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  background-color: #d4d4d4;
+  font-family: var(--fonte-inter);
+  font-size: 1rem;
+}
+
+.pesquisa__input::placeholder {
+  font-family: var(--fonte-inter);
+  color: #757575;
+  font-size: 1rem;
+}
+
+.pesquisa__input__grande {
+  width: 100%;
+  padding: 20px 20px 20px 70px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  background-color: #d4d4d4;
+  font-family: var(--fonte-inter);
+  font-size: 1.2rem;
+}
+
+.pesquisa__input__grande::placeholder {
+  font-family: var(--fonte-inter);
+  color: #757575;
+  font-size: 1.2rem;
+}

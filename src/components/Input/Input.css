@@ -1,0 +1,57 @@
+.input__itens {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+}
+
+.input__itens textarea {
+  height: 400px;
+  width: 500px;
+  align-self: center;
+  border: none;
+  background: #242933;
+}
+
+.legenda {
+  font-family: var(--fonte-segoe-ui);
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.input__container {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px solid white;
+  border-radius: 15px;
+  outline: none;
+  background: none;
+  color: white;
+  font-family: var(--fonte-segoe-ui);
+  font-weight: 100;
+}
+
+.input:focus {
+  border-color: var(--cor-verde-claro);
+}
+
+.icone {
+  z-index: 1000;
+  pointer-events: auto;
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  cursor: pointer;
+}
+
+.erro {
+  font-family: var(--fonte-segoe-ui);
+  font-size: 1rem;
+  font-weight: 100;
+  color: #ff5656;
+  align-self: flex-end;
+}
