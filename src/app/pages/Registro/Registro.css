@@ -1,66 +1,66 @@
 .registro__container {
-    display: flex;
-    flex-direction: column;
-    margin: 5rem 0 0 12rem;
-    align-items: start;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0 0 12rem;
+  align-items: start;
 }
 
 .registro__intro {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .registro__titulo {
-    font-family: var(--fonte-big-shoulders);
-    font-size: 3.7rem;
+  font-family: var(--fonte-big-shoulders);
+  font-size: 3.7rem;
 }
 
 .registro__subtitulo {
-    font-family: var(--fonte-poppins);
-    color: var(--cor-verde-claro);
-    font-weight: 200;
-    font-size: 1.5rem;
+  font-family: var(--fonte-poppins);
+  color: var(--cor-verde-claro);
+  font-weight: 200;
+  font-size: 1.5rem;
 }
 
 .registro__form__container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .registro__background {
-    width: auto;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
+  width: auto;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .registro__botao {
-    width: 330px;
-    background-color: var(--cor-verde-claro);
-    color: var(--cor-fundo);
-    font-family: var(--fonte-poppins);
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 15px;
-    padding: 10px 45px 10px 45px;
-    margin-top: 1rem;
+  width: 330px;
+  background-color: var(--cor-verde-claro);
+  color: var(--cor-fundo);
+  font-family: var(--fonte-poppins);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 45px 10px 45px;
+  margin-top: 1rem;
 }
 
 .registro__botao:hover {
-    cursor: pointer;
-    background-color: #EEFFD9;
+  cursor: pointer;
+  background-color: #eeffd9;
 }
 
 .registro__tipografia {
-    font-family: var(--fonte-segoe-ui);
-    font-weight: 200;
-    font-size: 1rem;
-    align-self: center;
+  font-family: var(--fonte-segoe-ui);
+  font-weight: 200;
+  font-size: 1rem;
+  align-self: center;
 }
 
 .registro__link {
-    color: var(--cor-verde-claro);
+  color: var(--cor-verde-claro);
 }

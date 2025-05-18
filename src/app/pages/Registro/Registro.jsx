@@ -5,7 +5,7 @@ import Background from '../../../assets/gow.jpg'
 import Input from '../../../components/Input/Input'
 import { Link } from 'react-router'
 import { useLogin } from '../../context/LoginContext'
-import { useNavigate } from "react-router"
+import { useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
 import { PulseLoader } from 'react-spinners'
 
@@ -20,7 +20,7 @@ function Registro() {
 
   useEffect(() => {
     if (logado) {
-      navigate("/")
+      navigate('/')
     }
   }, [logado, navigate])
 
@@ -35,7 +35,7 @@ function Registro() {
     if (!apelido.trim()) {
       erros.apelido = 'Preencha o apelido!'
     }
-    
+
     if (apelido.length > 25) {
       erros.apelido = 'O apelido deve ter até 25 caracteres.'
     }
@@ -48,7 +48,6 @@ function Registro() {
       erros.email = 'Preencha o e-mail!'
     }
 
-
     if (email.length > 70) {
       erros.email = 'O e-mail deve ter até 70 caracteres.'
     }
@@ -59,7 +58,6 @@ function Registro() {
 
     setErro(erros)
     return !erros.apelido && !erros.email && !erros.senha
-
   }
 
   const handleRegistrar = async () => {
@@ -68,7 +66,9 @@ function Registro() {
         setCarregando(true)
         await registrar(apelido, email, senha)
         const logado = await login(apelido, senha)
-        toast.success('Você se registrou com sucesso! O redirecionamos à página inicial.')
+        toast.success(
+          'Você se registrou com sucesso! O redirecionamos à página inicial.'
+        )
         setCarregando(false)
         if (logado) navigate('/')
       } catch (erro) {
@@ -82,45 +82,50 @@ function Registro() {
 
   return (
     <>
-        <Header modo="login"/>
-        <div className="registro__container">
-          <img src={Background} alt="" className="registro__background"/>
-          <div className="registro__intro">
-            <h1 className="registro__titulo">Crie sua conta.</h1>
-            <h3 className="registro__subtitulo">É grátis!</h3>
-          </div>
-          <div className="registro__form__container">
-            <Input
-              modo="texto"
-              legenda="Usuário"
-              value={apelido}
-              onChange={event => setApelido(event.target.value)}
-              erro={erro.apelido}
-            />
-            <Input
-              modo="texto"
-              legenda="E-mail"
-              value={email}
-              onChange={event => setEmail(event.target.value)}
-              erro={erro.email}
-            />
-            <Input
-              modo="senha"
-              legenda="Senha"
-              value={senha}
-              onChange={event => setSenha(event.target.value)}
-              erro={erro.senha}
-            />
-            <button className="registro__botao" onClick={handleRegistrar}>
-              {carregando ? (
-                <PulseLoader size={10} color="#13171E"/>
-              ) : (
-                'Criar conta'
-              )}
-            </button>
-            <p className="registro__tipografia">Já possui uma conta? <Link to="/login" className="login__link">Faça login!</Link></p>
-          </div>
+      <Header modo="login" />
+      <div className="registro__container">
+        <img src={Background} alt="" className="registro__background" />
+        <div className="registro__intro">
+          <h1 className="registro__titulo">Crie sua conta.</h1>
+          <h3 className="registro__subtitulo">É grátis!</h3>
         </div>
+        <div className="registro__form__container">
+          <Input
+            modo="texto"
+            legenda="Usuário"
+            value={apelido}
+            onChange={(event) => setApelido(event.target.value)}
+            erro={erro.apelido}
+          />
+          <Input
+            modo="texto"
+            legenda="E-mail"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            erro={erro.email}
+          />
+          <Input
+            modo="senha"
+            legenda="Senha"
+            value={senha}
+            onChange={(event) => setSenha(event.target.value)}
+            erro={erro.senha}
+          />
+          <button className="registro__botao" onClick={handleRegistrar}>
+            {carregando ? (
+              <PulseLoader size={10} color="#13171E" />
+            ) : (
+              'Criar conta'
+            )}
+          </button>
+          <p className="registro__tipografia">
+            Já possui uma conta?{' '}
+            <Link to="/login" className="login__link">
+              Faça login!
+            </Link>
+          </p>
+        </div>
+      </div>
     </>
   )
 }

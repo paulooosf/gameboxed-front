@@ -98,8 +98,8 @@ function ModalEsqueciSenha({ mostrar, handleFechar }) {
         <div className="modal__tipografias">
           <h1 className="modal__titulo">Esqueceu sua senha?</h1>
           <h3 className="modal__subtitulo">
-            Não se preocupe! Enviaremos um token de redefinição de senha para o seu
-            e-mail cadastrado.
+            Não se preocupe! Enviaremos um token de redefinição de senha para o
+            seu e-mail cadastrado.
           </h3>
         </div>
         {!avancar ? (
@@ -108,12 +108,12 @@ function ModalEsqueciSenha({ mostrar, handleFechar }) {
               modo="texto"
               legenda="E-mail"
               value={email}
-              onChange={event => setEmail(event.target.value)}
+              onChange={(event) => setEmail(event.target.value)}
               erro={erro.email}
             />
             <button className="modal__botao" onClick={handleEnviarEmail}>
               {carregando ? (
-                <PulseLoader size={10} color="#13171E"/>
+                <PulseLoader size={10} color="#13171E" />
               ) : (
                 'Enviar e-mail'
               )}
@@ -126,25 +126,25 @@ function ModalEsqueciSenha({ mostrar, handleFechar }) {
                 modo="texto"
                 legenda="Token"
                 value={token}
-                onChange={event => setToken(event.target.value)}
+                onChange={(event) => setToken(event.target.value)}
                 erro={erro.token}
               />
               <Input
                 modo="senha"
                 legenda="Nova senha"
                 value={senha}
-                onChange={event => setSenha(event.target.value)}
+                onChange={(event) => setSenha(event.target.value)}
               />
               <Input
                 modo="senha"
                 legenda="Confirme a senha"
                 value={confirmarSenha}
-                onChange={event => setConfirmarSenha(event.target.value)}
+                onChange={(event) => setConfirmarSenha(event.target.value)}
                 erro={erro.senha}
               />
               <button className="modal__botao" onClick={handleRedefinirSenha}>
                 {carregando ? (
-                  <PulseLoader size={10} color="#13171E"/>
+                  <PulseLoader size={10} color="#13171E" />
                 ) : (
                   'Redefinir'
                 )}

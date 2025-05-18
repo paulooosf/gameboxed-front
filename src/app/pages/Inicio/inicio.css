@@ -1,79 +1,79 @@
 .inicio {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .inicio__background {
-    width: 80vw;
-    height: auto;
-    position: absolute;
-    top: 0;
-    align-self: center;
-    z-index: -1;
+  width: 80vw;
+  height: auto;
+  position: absolute;
+  top: 0;
+  align-self: center;
+  z-index: -1;
 }
 
 .inicio__intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 35rem;
 }
 
 .inicio__intro__tipografia {
-    font-family: var(--fonte-kdam);
-    font-size: 2.5rem;
-    color: white;
+  font-family: var(--fonte-kdam);
+  font-size: 2.5rem;
+  color: white;
 }
 
 .inicio__intro__botao {
-    margin-top: 20px;
-    background-color: var(--cor-verde-claro);
-    color: var(--cor-fundo);
-    font-family: var(--fonte-poppins);
-    font-size: 2rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 15px;
-    padding: 20px 85px 20px 85px;
+  margin-top: 20px;
+  background-color: var(--cor-verde-claro);
+  color: var(--cor-fundo);
+  font-family: var(--fonte-poppins);
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 20px 85px 20px 85px;
 }
 
 .inicio__intro__botao:hover {
-    cursor: pointer;
-    background-color: #EEFFD9;
+  cursor: pointer;
+  background-color: #eeffd9;
 }
 
 .inicio__em__alta {
-    display: flex;
-    flex-direction: column;
-    padding: 7rem;
+  display: flex;
+  flex-direction: column;
+  padding: 7rem;
 }
 
 .inicio__em__alta__tipografia {
-    font-family: var(--fonte-poppins);
-    font-size: 24px;
-    margin-bottom: 1rem;
+  font-family: var(--fonte-poppins);
+  font-size: 24px;
+  margin-bottom: 1rem;
 }
 
 .inicio__adicionados__recentemente {
-    display: flex;
-    flex-direction: column;
-    padding: 0 7rem 7rem 7rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 7rem 7rem 7rem;
 }
 
 .inicio__adicionados__recentemente__tipografia {
-    font-family: var(--fonte-poppins);
-    font-size: 24px;
-    margin-bottom: 1rem;
+  font-family: var(--fonte-poppins);
+  font-size: 24px;
+  margin-bottom: 1rem;
 }
 
 .inicio__cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .inicio__cards a {
-    text-decoration: none;
+  text-decoration: none;
 }

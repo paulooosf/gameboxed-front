@@ -1,125 +1,125 @@
 .jogos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .jogos__background {
-    width: 80vw;
-    height: auto;
-    position: absolute;
-    top: 0;
-    align-self: center;
-    z-index: -1;
+  width: 80vw;
+  height: auto;
+  position: absolute;
+  top: 0;
+  align-self: center;
+  z-index: -1;
 }
 
 .jogos__pesquisa {
-    padding-top: 35rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    gap: 1rem;
+  padding-top: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
 }
 
 .jogos__pesquisa__tipografia {
-    color: white;
-    font-family: var(--fonte-poppins);
-    font-size: 2rem;
-    font-weight: 600;
-    margin-top: 1rem;
+  color: white;
+  font-family: var(--fonte-poppins);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 1rem;
 }
 
 .jogos__filtros {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .jogos__filtros a {
-    text-decoration: none;
-    background-color: var(--cor-verde-claro);
-    font-size: 1.2rem;
-    color: var(--cor-fundo);
-    font-family: var(--fonte-big-shoulders);
-    font-weight: 800;
-    border-radius: 15px;
-    padding: 7px 25px 7px 25px;
+  text-decoration: none;
+  background-color: var(--cor-verde-claro);
+  font-size: 1.2rem;
+  color: var(--cor-fundo);
+  font-family: var(--fonte-big-shoulders);
+  font-weight: 800;
+  border-radius: 15px;
+  padding: 7px 25px 7px 25px;
 }
 
 .jogos__filtros a:hover {
-    cursor: pointer;
-    background-color: #EEFFD9;
+  cursor: pointer;
+  background-color: #eeffd9;
 }
 
 .jogos__resultado {
-    padding: 5rem;
+  padding: 5rem;
 }
 
 .jogos__resultado__tipografia {
-    color: white;
-    font-family: var(--fonte-poppins);
-    font-weight: 400;
-    font-size: 24px;
-    margin-bottom: 1rem;
+  color: white;
+  font-family: var(--fonte-poppins);
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 1rem;
 }
 
 .jogos__resultado__tipografia__verde {
-    color: var(--cor-verde-claro)
+  color: var(--cor-verde-claro);
 }
 
 .jogos__cards {
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .cards__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-    max-width: 1700px;             /* Largura máxima da "área de exibição" */
-    padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1700px; /* Largura máxima da "área de exibição" */
+  padding: 0 20px;
 }
 
 .jogos__cards a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .jogos__paginas {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-self: center;
-    align-items: center;
-    gap: 20px;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .jogos__paginas button {
-    background-color: var(--cor-verde-claro);
-    font-size: 1.2rem;
-    color: var(--cor-fundo);
-    font-family: var(--fonte-kdam);
-    font-weight: 600;
-    border: none;
-    border-radius: 15px;
-    padding: 7px 25px 7px 25px;
+  background-color: var(--cor-verde-claro);
+  font-size: 1.2rem;
+  color: var(--cor-fundo);
+  font-family: var(--fonte-kdam);
+  font-weight: 600;
+  border: none;
+  border-radius: 15px;
+  padding: 7px 25px 7px 25px;
 }
 
 .jogos__paginas button:hover {
-    cursor: pointer;
-    background-color: #EEFFD9;
+  cursor: pointer;
+  background-color: #eeffd9;
 }
 
 .jogos__paginas button:disabled {
-    cursor: auto;
-    background-color: #27301d;
+  cursor: auto;
+  background-color: #27301d;
 }
 
 .jogos__paginas p {
-    font-size: 1.2rem;
-    font-family: var(--fonte-segoe-ui);
-    font-weight: 500;
+  font-size: 1.2rem;
+  font-family: var(--fonte-segoe-ui);
+  font-weight: 500;
 }

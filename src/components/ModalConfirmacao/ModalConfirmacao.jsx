@@ -5,9 +5,14 @@ import './ModalConfirmacao.css'
 import { PulseLoader } from 'react-spinners'
 import { useState } from 'react'
 
-function ModalConfirmacao({ mostrar, handleFechar, handleAtualizar, idAvaliacao }) {
+function ModalConfirmacao({
+  mostrar,
+  handleFechar,
+  handleAtualizar,
+  idAvaliacao,
+}) {
   const [carregando, setCarregando] = useState(false)
-  
+
   if (!mostrar) return null
 
   const handleDeleteAvaliacao = async () => {
@@ -34,19 +39,21 @@ function ModalConfirmacao({ mostrar, handleFechar, handleAtualizar, idAvaliacao 
         <div className="modal__confirmacao__tipografias">
           <h1 className="modal__confirmacao__titulo">Tem certeza?</h1>
           <h3 className="modal__confirmacao__subtitulo">
-            Após apagar a avaliação, ela não poderá ser recuperada! 
+            Após apagar a avaliação, ela não poderá ser recuperada!
           </h3>
         </div>
         <div className="modal__confirmacao__botoes">
-          <button className="modal__confirmacao__botao__cancelar" onClick={handleFechar}>
+          <button
+            className="modal__confirmacao__botao__cancelar"
+            onClick={handleFechar}
+          >
             Cancelar
           </button>
-          <button className="modal__confirmacao__botao__enviar" onClick={handleDeleteAvaliacao}>
-            {carregando ? (
-              <PulseLoader size={10} color="#13171E"/>
-            ) : (
-              'Apagar'
-            )}
+          <button
+            className="modal__confirmacao__botao__enviar"
+            onClick={handleDeleteAvaliacao}
+          >
+            {carregando ? <PulseLoader size={10} color="#13171E" /> : 'Apagar'}
           </button>
         </div>
       </div>

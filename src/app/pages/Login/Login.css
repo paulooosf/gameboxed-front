@@ -1,69 +1,69 @@
 .login__container {
-    display: flex;
-    flex-direction: column;
-    margin: 5rem 0 0 12rem;
-    gap: 1.2rem;
-    align-items: start;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0 0 12rem;
+  gap: 1.2rem;
+  align-items: start;
 }
 
 .login__intro {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .login__titulo {
-    font-family: var(--fonte-big-shoulders);
-    font-size: 3.7rem;
+  font-family: var(--fonte-big-shoulders);
+  font-size: 3.7rem;
 }
 
 .login__background {
-    width: auto;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
+  width: auto;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .login__form__container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .login__botao {
-    width: 330px;
-    background-color: var(--cor-verde-claro);
-    color: var(--cor-fundo);
-    font-family: var(--fonte-poppins);
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 15px;
-    padding: 10px 45px 10px 45px;
-    margin-top: 1rem;
+  width: 330px;
+  background-color: var(--cor-verde-claro);
+  color: var(--cor-fundo);
+  font-family: var(--fonte-poppins);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 45px 10px 45px;
+  margin-top: 1rem;
 }
 
 .login__botao:hover {
-    cursor: pointer;
-    background-color: #EEFFD9;
+  cursor: pointer;
+  background-color: #eeffd9;
 }
 
 .login__tipografia {
-    font-family: var(--fonte-segoe-ui);
-    font-weight: 200;
-    font-size: 1rem;
-    align-self: center;
+  font-family: var(--fonte-segoe-ui);
+  font-weight: 200;
+  font-size: 1rem;
+  align-self: center;
 }
 
 .login__link {
-    font-family: var(--fonte-segoe-ui);
-    font-weight: 200;
-    font-size: 1rem;
-    align-self: center;
-    text-decoration: underline;
-    color: var(--cor-verde-claro);
+  font-family: var(--fonte-segoe-ui);
+  font-weight: 200;
+  font-size: 1rem;
+  align-self: center;
+  text-decoration: underline;
+  color: var(--cor-verde-claro);
 }
 
 .login__link:hover {
-    cursor: pointer;
+  cursor: pointer;
 }

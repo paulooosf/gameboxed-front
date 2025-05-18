@@ -6,7 +6,7 @@ import Input from '../../../components/Input/Input'
 import ModalEsqueciSenha from '../../../components/ModalEsqueciSenha/ModalEsqueciSenha'
 import { Link } from 'react-router-dom'
 import { useLogin } from '../../context/LoginContext'
-import { useNavigate } from "react-router"
+import { useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
 import { PulseLoader } from 'react-spinners'
 
@@ -21,7 +21,7 @@ function Login() {
 
   useEffect(() => {
     if (logado) {
-      navigate("/")
+      navigate('/')
     }
   }, [logado, navigate])
 
@@ -45,7 +45,9 @@ function Login() {
       try {
         setCarregando(true)
         const logado = await login(apelido, senha)
-        toast.success('Você logou com sucesso! O redirecionamos à página inicial.')
+        toast.success(
+          'Você logou com sucesso! O redirecionamos à página inicial.'
+        )
         setCarregando(false)
         if (logado) navigate('/')
       } catch (erro) {
@@ -59,39 +61,45 @@ function Login() {
 
   return (
     <>
-        <Header modo="login"/>
-        <div className="login__container">
-          <img src={Background} alt="" className="login__background"/>
-          <div className="login__intro">
-            <h1 className="login__titulo">Bem-vindo de volta!</h1>
-          </div>
-          <div className="login__form__container">
-            <Input
-              modo="texto"
-              legenda="Usuário"
-              value={apelido}
-              onChange={event => setApelido(event.target.value)}
-              erro={erro.apelido}
-            />
-            <Input
-              modo="senha"
-              legenda="Senha"
-              value={senha}
-              onChange={event => setSenha(event.target.value)}
-              erro={erro.senha}
-            />
-            <a onClick={() => setMostrarModal(true)} className="login__link">Esqueceu sua senha?</a>
-            <button className="login__botao" onClick={handleLogin}>
-              {carregando ? (
-                <PulseLoader size={10} color="#13171E"/>
-              ) : (
-                'Entrar'
-              )}
-            </button>
-            <p className="login__tipografia">Ainda não possui uma conta? <Link to="/registro" className="login__link">Cadastre-se!</Link></p>
-          </div>
-          <ModalEsqueciSenha mostrar={mostrarModal} handleFechar={() => setMostrarModal(false)}/>
+      <Header modo="login" />
+      <div className="login__container">
+        <img src={Background} alt="" className="login__background" />
+        <div className="login__intro">
+          <h1 className="login__titulo">Bem-vindo de volta!</h1>
         </div>
+        <div className="login__form__container">
+          <Input
+            modo="texto"
+            legenda="Usuário"
+            value={apelido}
+            onChange={(event) => setApelido(event.target.value)}
+            erro={erro.apelido}
+          />
+          <Input
+            modo="senha"
+            legenda="Senha"
+            value={senha}
+            onChange={(event) => setSenha(event.target.value)}
+            erro={erro.senha}
+          />
+          <a onClick={() => setMostrarModal(true)} className="login__link">
+            Esqueceu sua senha?
+          </a>
+          <button className="login__botao" onClick={handleLogin}>
+            {carregando ? <PulseLoader size={10} color="#13171E" /> : 'Entrar'}
+          </button>
+          <p className="login__tipografia">
+            Ainda não possui uma conta?{' '}
+            <Link to="/registro" className="login__link">
+              Cadastre-se!
+            </Link>
+          </p>
+        </div>
+        <ModalEsqueciSenha
+          mostrar={mostrarModal}
+          handleFechar={() => setMostrarModal(false)}
+        />
+      </div>
     </>
   )
 }

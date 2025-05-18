@@ -2,7 +2,13 @@
 import './ModalListarAvaliacoes.css'
 import Avaliacao from '../Avaliacao/Avaliacao'
 
-function ModalListarAvaliacoes({ mostrar, handleFechar, handleAtualizar, avaliacoes, titulo }) {
+function ModalListarAvaliacoes({
+  mostrar,
+  handleFechar,
+  handleAtualizar,
+  avaliacoes,
+  titulo,
+}) {
   if (!mostrar) return null
 
   return (
@@ -13,9 +19,7 @@ function ModalListarAvaliacoes({ mostrar, handleFechar, handleAtualizar, avaliac
         </button>
         <div className="modal__avaliacoes__tipografias">
           <h1 className="modal__avaliacoes__titulo">Avaliações</h1>
-          <h3 className="modal__avaliacoes__subtitulo">
-            {titulo}
-          </h3>
+          <h3 className="modal__avaliacoes__subtitulo">{titulo}</h3>
         </div>
         {avaliacoes.map((avaliacao) => (
           <Avaliacao

@@ -33,12 +33,20 @@ function Inicio() {
 
   return (
     <div className="inicio">
-      <img src={Background} alt="Imagem de fundo do site, uma arte do jogo Valorant" className="inicio__background"/>
-      <Header modo={logado ? 'logado' : 'deslogado'}/>
+      <img
+        src={Background}
+        alt="Imagem de fundo do site, uma arte do jogo Valorant"
+        className="inicio__background"
+      />
+      <Header modo={logado ? 'logado' : 'deslogado'} />
       <section className="inicio__intro">
         <p className="inicio__intro__tipografia">Avalie jogos.</p>
-        <p className="inicio__intro__tipografia">Compartilhe sua experiência.</p>
-        <p className="inicio__intro__tipografia">Descubra novas possibilidades.</p>
+        <p className="inicio__intro__tipografia">
+          Compartilhe sua experiência.
+        </p>
+        <p className="inicio__intro__tipografia">
+          Descubra novas possibilidades.
+        </p>
         {!logado && (
           <Link to="/registro">
             <button className="inicio__intro__botao">Registre-se!</button>
@@ -62,22 +70,24 @@ function Inicio() {
         </div>
       </section>
       <section className="inicio__adicionados__recentemente">
-        <p className="inicio__adicionados__recentemente__tipografia">Adicionados Recentemente:</p>
+        <p className="inicio__adicionados__recentemente__tipografia">
+          Adicionados Recentemente:
+        </p>
         <div className="inicio__cards">
           {jogosRecentes.map((jogo) => (
-              <>
-                <Link to={`/jogo/${jogo.id}`}>
-                  <Card
-                    capa={jogo.linkCapa}
-                    titulo={jogo.nome}
-                    nota={parseFloat(jogo.nota).toFixed(2)}
-                  />
-                </Link>
-              </>
-            ))}
-        </div>      
+            <>
+              <Link to={`/jogo/${jogo.id}`}>
+                <Card
+                  capa={jogo.linkCapa}
+                  titulo={jogo.nome}
+                  nota={parseFloat(jogo.nota).toFixed(2)}
+                />
+              </Link>
+            </>
+          ))}
+        </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

@@ -8,11 +8,19 @@ import Input from '../Input/Input'
 import { FaStar } from 'react-icons/fa'
 import { PulseLoader } from 'react-spinners'
 
-function ModalInserirAvaliacoes({ mostrar, handleFechar, handleAtualizar, modo, idJogo, tituloJogo, avaliacao }) {
+function ModalInserirAvaliacoes({
+  mostrar,
+  handleFechar,
+  handleAtualizar,
+  modo,
+  idJogo,
+  tituloJogo,
+  avaliacao,
+}) {
   const [comentario, setComentario] = useState('')
   const [nota, setNota] = useState('')
   const [carregando, setCarregando] = useState(false)
-  const [erro, setErro] = useState({ comentario: '', nota: ''})
+  const [erro, setErro] = useState({ comentario: '', nota: '' })
   const [hover, setHover] = useState(0)
 
   useEffect(() => {
@@ -24,11 +32,11 @@ function ModalInserirAvaliacoes({ mostrar, handleFechar, handleAtualizar, modo, 
       setNota(avaliacao.nota)
     }
     setCarregando(false)
-    setErro({ comentario: '', nota: ''})
+    setErro({ comentario: '', nota: '' })
   }, [mostrar])
 
   const validar = () => {
-    const erros = { comentario: '', nota: ''}
+    const erros = { comentario: '', nota: '' }
 
     if (comentario.trim().length > 500) {
       erros.comentario = 'O comentário deve ter até 500 caracteres!'
@@ -89,45 +97,60 @@ function ModalInserirAvaliacoes({ mostrar, handleFechar, handleAtualizar, modo, 
           ×
         </button>
         <div className="modal__inserir__tipografias">
-          <h1 className="modal__inserir__titulo">{modo === 'avaliar' ? tituloJogo : 'Editando avaliação'}</h1>
+          <h1 className="modal__inserir__titulo">
+            {modo === 'avaliar' ? tituloJogo : 'Editando avaliação'}
+          </h1>
           <h3 className="modal__inserir__subtitulo">
             {modo === 'avaliar' ? 'Merece qual nota?' : tituloJogo}
           </h3>
         </div>
         <div className="modal__inserir__estrelas">
-          {[1, 2, 3, 4, 5].map(valor => (
-              <FaStar
-                key={valor}
-                className={
-                  valor <= (hover || nota)
-                    ? nota >= valor
-                      ? 'estrela verde'
-                      : 'estrela branca'
-                    : 'estrela'
-                }
-                onMouseEnter={() => setHover(valor)}
-                onMouseLeave={() => setHover(0)}
-                onClick={() => setNota(valor)}
-              />
-            ))}
+          {[1, 2, 3, 4, 5].map((valor) => (
+            <FaStar
+              key={valor}
+              className={
+                valor <= (hover || nota)
+                  ? nota >= valor
+                    ? 'estrela verde'
+                    : 'estrela branca'
+                  : 'estrela'
+              }
+              onMouseEnter={() => setHover(valor)}
+              onMouseLeave={() => setHover(0)}
+              onClick={() => setNota(valor)}
+            />
+          ))}
         </div>
         <p className="modal__inserir__erro">{erro.nota}</p>
-        <h2 className="modal__inserir__label">Conte sua experiência! <span className="modal__inserir__label__subtitulo">(opcional)</span></h2>
+        <h2 className="modal__inserir__label">
+          Conte sua experiência!{' '}
+          <span className="modal__inserir__label__subtitulo">(opcional)</span>
+        </h2>
         <Input
           modo="textarea"
           value={comentario}
-          onChange={event => setComentario(event.target.value)}
+          onChange={(event) => setComentario(event.target.value)}
           erro={erro.comentario}
         />
         <div className="modal__inserir__botoes">
-          <button className="modal__inserir__botao__cancelar" onClick={handleFechar}>
+          <button
+            className="modal__inserir__botao__cancelar"
+            onClick={handleFechar}
+          >
             Cancelar
           </button>
-          <button className="modal__inserir__botao__enviar" onClick={modo === 'avaliar' ? handlePostAvaliacao : handlePutAvaliacao}>
+          <button
+            className="modal__inserir__botao__enviar"
+            onClick={
+              modo === 'avaliar' ? handlePostAvaliacao : handlePutAvaliacao
+            }
+          >
             {carregando ? (
-              <PulseLoader size={10} color="#13171E"/>
+              <PulseLoader size={10} color="#13171E" />
+            ) : modo === 'avaliar' ? (
+              'Enviar'
             ) : (
-              modo === 'avaliar' ? 'Enviar' : 'Editar'
+              'Editar'
             )}
           </button>
         </div>
