@@ -11,6 +11,7 @@ import { toast } from 'react-toastify'
 import { useLogin } from '../../context/LoginContext'
 import ModalListarAvaliacoes from '../../../components/ModalListarAvaliacoes/ModalListarAvaliacoes'
 import ModalInserirAvaliacoes from '../../../components/ModalInserirAvaliacoes/ModalInserirAvaliacoes'
+import Carregamento from '../../../components/Carregamento/Carregamento'
 
 function Jogo() {
   const { id } = useParams()
@@ -20,13 +21,17 @@ function Jogo() {
   const [mostrarModalInserirAvaliacoes, setMostrarModalInserirAvaliacoes] =
     useState(false)
   const [atualizar, setAtualizar] = useState(false)
+  const [carregando, setCarregando] = useState(false)
 
   useEffect(() => {
     const carregarDados = async () => {
       try {
+        setCarregando(true)
         const resposta = await getJogo(id)
         setJogo(resposta)
+        setCarregando(false)
       } catch (erro) {
+        setCarregando(false)
         toast.error('Erro ao buscar dados do jogo.')
         console.error('Erro na requisição de dados do jogo: ' + erro)
       }
@@ -144,6 +149,7 @@ function Jogo() {
           ></iframe>
         )}
       </article>
+      <Carregamento mostrar={carregando}/>
       <Footer />
     </div>
   )

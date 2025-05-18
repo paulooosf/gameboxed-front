@@ -8,21 +8,27 @@ import { Link } from 'react-router-dom'
 import { useLogin } from '../../context/LoginContext'
 import { getJogos } from '../../../api/jogos'
 import { toast } from 'react-toastify'
+import Carregamento from '../../../components/Carregamento/Carregamento'
 
 function Inicio() {
   const { logado } = useLogin()
   const [melhoresJogos, setMelhoresJogos] = useState([])
   const [jogosRecentes, setJogosRecentes] = useState([])
+  const [carregando, setCarregando] = useState(false)
 
   useEffect(() => {
     const carregarJogos = async () => {
       try {
+        setCarregando(true)
+        
         const respostaMelhores = await getJogos(0, 5, 'nota,desc')
         const respostaRecentes = await getJogos(0, 5, 'ano,desc')
 
         setMelhoresJogos(respostaMelhores.content)
         setJogosRecentes(respostaRecentes.content)
+        setCarregando(false)
       } catch (erro) {
+        setCarregando(false)
         toast.error('Erro ao pesquisar jogos.')
         console.error('Erro na requisição de jogos: ' + erro)
       }
@@ -83,7 +89,8 @@ function Inicio() {
           ))}
         </div>
       </section>
-      <Footer />
+      <Carregamento mostrar={carregando}/>
+      <Footer/>
     </div>
   )
 }

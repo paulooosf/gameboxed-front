@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import { Link, useSearchParams } from 'react-router-dom'
 import Pesquisa from '../../../components/Pesquisa/Pesquisa'
+import Carregamento from '../../../components/Carregamento/Carregamento'
 
 function Jogos() {
   const { logado } = useLogin()
@@ -17,14 +18,18 @@ function Jogos() {
   const [jogos, setJogos] = useState([])
   const [pagina, setPagina] = useState(0)
   const [totalPaginas, setTotalPaginas] = useState(0)
+  const [carregando, setCarregando] = useState(false)
 
   useEffect(() => {
     const carregarJogos = async () => {
       try {
+        setCarregando(true)
         const resposta = await getJogos(pagina, 10, 'nota,desc', nomeJogo)
         setJogos(resposta.content)
         setTotalPaginas(resposta.totalPages)
+        setCarregando(false)
       } catch (erro) {
+        setCarregando(false)
         toast.error('Erro ao pesquisar jogos.')
         console.error('Erro na requisição de jogos: ' + erro)
       }
@@ -86,6 +91,7 @@ function Jogos() {
           </button>
         </div>
       </main>
+      <Carregamento mostrar={carregando}/>
       <Footer />
     </div>
   )
