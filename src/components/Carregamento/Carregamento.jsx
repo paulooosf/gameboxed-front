@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import './Carregamento.css'
 import { PulseLoader } from 'react-spinners'
 
