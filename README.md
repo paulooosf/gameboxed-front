@@ -3,7 +3,7 @@
     <img alt="Logo do projeto" src="./src/assets/logo.png">
     <h3>Uma plataforma de avaliações de jogos, onde Gamers podem dar suas notas e compartilhar sua experiência sobre diversos jogos.</h4>
     <img alt="React" src="https://img.shields.io/badge/REACT-%2361DAFB?style=for-the-badge&logo=REACT&logoColor=%2361DAFB&labelColor=black">
-    <img alt="CSS3" src="https://img.shields.io/badge/css-%231572B6?style=for-the-badge&logo=css3&logoColor=%231572B6&labelColor=black">
+    <img alt="CSS3" src="https://img.shields.io/badge/css-%23663399?style=for-the-badge&logo=css&logoColor=%23663399&labelColor=black">
     <img alt="Docker" src="https://img.shields.io/badge/docker-%232496ED?style=for-the-badge&logo=docker&logoColor=%232496ED&labelColor=black">
 </div>
 <div align="center">
