@@ -40,6 +40,16 @@ export const LoginProvider = ({ children }) => {
     }
   }
 
+  const loginOAuth = (token, apelido) => {
+    Cookies.set('token', token, {
+      expires: 1,
+      sameSite: 'Lax',
+    })
+    localStorage.setItem('apelido', apelido)
+    setLogado(true)
+    setApelido(apelido)
+  }
+
   const registrar = async (apelido, email, senha) => {
     try {
       await postRegistrar(apelido, email, senha)
@@ -86,6 +96,7 @@ export const LoginProvider = ({ children }) => {
         logado,
         apelido,
         login,
+        loginOAuth,
         registrar,
         solicitarTokenSenha,
         redefinirSenha,
