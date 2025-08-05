@@ -20,7 +20,8 @@
     <img alt="Captura de tela do projeto" src="https://i.imgur.com/wcLXn0J.jpeg">
     <h2>Login e Redefinição de senha</h1>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/MgrxG1FmuIY?si=hlltan0Zxdn_uiCZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <img alt="Captura de tela do projeto" src="https://i.imgur.com/23PHR5w.png">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qUoxfHteDPo?si=rcxhNI8az71TUZCt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <img alt="Captura de tela do projeto" src="https://i.imgur.com/7o5TrcU.png">
     <img alt="Captura de tela do projeto" src="https://i.imgur.com/lQ1heBb.png">
     <h2>Pesquisa</h1>
     <img alt="Captura de tela do projeto" src="https://i.imgur.com/6IyyMhQ.png">
@@ -31,7 +32,8 @@
 </details>
 
 ## Funcionalidades
-- Autenticação completo com login e registro lidando com tokens JWT;
+- Autenticação completa com login e registro lidando com tokens JWT;
+- Login via Google OAuth;
 - Redefinição de senha por e-mail;
 - Pesquisa de jogos, lidando com paginação;
 - Avaliação de jogos, dando uma nota de 0 a 5 e podendo ou não incluir um comentário;
