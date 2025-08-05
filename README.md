@@ -20,7 +20,8 @@
     <img alt="Captura de tela do projeto" src="https://i.imgur.com/wcLXn0J.jpeg">
     <h2>Login e Redefinição de senha</h1>
     <a href="https://youtu.be/MgrxG1FmuIY?si=DVXJLIHNrAaroUWo">Vídeo</a>
-    <img alt="Captura de tela do projeto" src="https://i.imgur.com/23PHR5w.png">
+    <a href="https://youtu.be/qUoxfHteDPo?si=Z9ZeEYbzfTmWFwrX">Vídeo Login via Google</a>
+    <img alt="Captura de tela do projeto" src="https://i.imgur.com/7o5TrcU.png">
     <img alt="Captura de tela do projeto" src="https://i.imgur.com/lQ1heBb.png">
     <h2>Pesquisa</h1>
     <img alt="Captura de tela do projeto" src="https://i.imgur.com/6IyyMhQ.png">
@@ -31,7 +32,8 @@
 </details>
 
 ## Funcionalidades
-- Autenticação completo com login e registro lidando com tokens JWT;
+- Autenticação completa com login e registro lidando com tokens JWT;
+- Login via Google OAuth;
 - Redefinição de senha por e-mail;
 - Pesquisa de jogos, lidando com paginação;
 - Avaliação de jogos, dando uma nota de 0 a 5 e podendo ou não incluir um comentário;

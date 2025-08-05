@@ -48,6 +48,37 @@
   background-color: #eeffd9;
 }
 
+.login__ou {
+  font-family: var(--fonte-segoe-ui);
+  font-size: 1rem;
+  font-weight: 400;
+  color: gray;
+  align-self: center;
+}
+
+.login__google__botao {
+  background-color: #F6F6F6;
+  border: none;
+  color: #3c4043;
+  font-family: var(--fonte-poppins);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 15px;
+  padding: 8px 20px 8px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+.login__google__botao:hover {
+  background-color: white;
+  color: #7f878b;
+  cursor: pointer;
+}
+
 .login__tipografia {
   font-family: var(--fonte-segoe-ui);
   font-weight: 200;
@@ -62,6 +93,8 @@
   align-self: center;
   text-decoration: underline;
   color: var(--cor-verde-claro);
+  background: transparent;
+  border: none;
 }
 
 .login__link:hover {
