@@ -4,6 +4,7 @@ import Jogo from './pages/Jogo/Jogo.jsx'
 import Registro from './pages/Registro/Registro.jsx'
 import Login from './pages/Login/Login.jsx'
 import Jogos from './pages/Jogos/Jogos.jsx'
+import LogadoOAuth from './pages/LogadoOAuth/LogadoOAuth.jsx'
 
 function AppRouter() {
   return (
@@ -11,6 +12,7 @@ function AppRouter() {
       <Route path="/" element={<Inicio />} />
       <Route path="/jogo/:id" element={<Jogo />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/oauth-sucesso" element={<LogadoOAuth />} />
       <Route path="/registro" element={<Registro />} />
       <Route path="/jogos" element={<Jogos />} />
     </Routes>
