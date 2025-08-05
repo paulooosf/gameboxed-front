@@ -3,7 +3,7 @@
     <img alt="Logo do projeto" src="./src/assets/logo.png">
     <h3>Uma plataforma de avaliações de jogos, onde Gamers podem dar suas notas e compartilhar sua experiência sobre diversos jogos.</h4>
     <img alt="React" src="https://img.shields.io/badge/REACT-%2361DAFB?style=for-the-badge&logo=REACT&logoColor=%2361DAFB&labelColor=black">
-    <img alt="CSS3" src="https://img.shields.io/badge/css-%231572B6?style=for-the-badge&logo=css3&logoColor=%231572B6&labelColor=black">
+    <img alt="CSS3" src="https://img.shields.io/badge/css-%23663399?style=for-the-badge&logo=css&logoColor=%23663399&labelColor=black">
     <img alt="Docker" src="https://img.shields.io/badge/docker-%232496ED?style=for-the-badge&logo=docker&logoColor=%232496ED&labelColor=black">
 </div>
 <div align="center">
@@ -15,12 +15,12 @@
 # Vídeos e Capturas de Tela
 <details><summary>Mostrar</summary>
     <h2>Visão Geral</h1>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/a3WwV8_MXiI?si=SK8Gf3e5-BM8Xo0J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <a href="https://youtu.be/a3WwV8_MXiI?si=DkYlz2kKf9j0N-SN">Vídeo</a>
     <h2>Início</h1>
     <img alt="Captura de tela do projeto" src="https://i.imgur.com/wcLXn0J.jpeg">
     <h2>Login e Redefinição de senha</h1>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/MgrxG1FmuIY?si=hlltan0Zxdn_uiCZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/qUoxfHteDPo?si=rcxhNI8az71TUZCt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <a href="https://youtu.be/MgrxG1FmuIY?si=DVXJLIHNrAaroUWo">Vídeo</a>
+    <a href="https://youtu.be/qUoxfHteDPo?si=Z9ZeEYbzfTmWFwrX">Vídeo Login via Google</a>
     <img alt="Captura de tela do projeto" src="https://i.imgur.com/7o5TrcU.png">
     <img alt="Captura de tela do projeto" src="https://i.imgur.com/lQ1heBb.png">
     <h2>Pesquisa</h1>
